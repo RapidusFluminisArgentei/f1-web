@@ -14,7 +14,7 @@
             "ubicacion": "Melbourne",
             "fecha_carrera": "08/03/2026",
             "hora_carrera": "15:00",
-            "ya_paso": false
+            "ya_paso": true
         },
         {
             "ronda": 2,
@@ -23,7 +23,7 @@
             "ubicacion": "Shanghai",
             "fecha_carrera": "15/03/2026",
             "hora_carrera": "15:00",
-            "ya_paso": false
+            "ya_paso": true
         },
         {
             "ronda": 3,
@@ -32,7 +32,7 @@
             "ubicacion": "Suzuka",
             "fecha_carrera": "29/03/2026",
             "hora_carrera": "14:00",
-            "ya_paso": false
+            "ya_paso": true
         },
         {
             "ronda": 4,
@@ -41,7 +41,7 @@
             "ubicacion": "Miami Gardens",
             "fecha_carrera": "03/05/2026",
             "hora_carrera": "13:00",
-            "ya_paso": false
+            "ya_paso": true
         },
         {
             "ronda": 5,
@@ -50,7 +50,7 @@
             "ubicacion": "Montréal",
             "fecha_carrera": "24/05/2026",
             "hora_carrera": "16:00",
-            "ya_paso": false
+            "ya_paso": true
         },
         {
             "ronda": 6,
