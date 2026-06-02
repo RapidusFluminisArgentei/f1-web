@@ -1,0 +1,91 @@
+/* Configuración general y Modo Oscuro */
+body {
+    background-color: #15151e;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Encabezado / Navbar - Estilo F1 Argentino */
+header {
+    background-color: #e10600;
+    color: #15151e;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+header div.bandera-container {
+    background: linear-gradient(
+        to bottom,
+        #74ACDF 0%, #74ACDF 33.33%,
+        #FFFFFF 33.33%, #FFFFFF 66.66%,
+        #74ACDF 66.66%, #74ACDF 100%
+    );
+    padding: 15px;
+    border-radius: 4px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: #15151e;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+    color: #15151e;
+}
+
+/* Contenedor principal */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #e10600;
+    border-bottom: 2px solid #38383f;
+    padding-bottom: 8px;
+    margin-top: 30px;
+}
+
+/* Estilo para la zona de contacto */
+.contacto-box {
+    background-color: #1f1f2a;
+    border: 1px solid #38383f;
+    padding: 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.contacto-box a {
+    color: #74ACDF; /* Color celeste para el link, combinando con la bandera */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contacto-box a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #38383f;
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #88888d;
+    font-size: 0.9rem;
+    margin-top: 50px;
+    border-top: 1px solid #38383f;
+}
