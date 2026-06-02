@@ -1,4 +1,4 @@
-/* Configuración general y Modo Oscuro */
+/* Configuración general */
 body {
     background-color: #15151e;
     color: #ffffff;
@@ -8,30 +8,32 @@ body {
     line-height: 1.6;
 }
 
-/* Encabezado / Navbar - Estilo F1 Argentino */
+/* Header con bandera */
 header {
     background-color: #e10600;
     color: #15151e;
-    padding: 10px 20px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-header div.bandera-container {
+header .bandera-container {
     background: linear-gradient(
         to bottom,
         #74ACDF 0%, #74ACDF 33.33%,
         #FFFFFF 33.33%, #FFFFFF 66.66%,
         #74ACDF 66.66%, #74ACDF 100%
     );
-    padding: 15px;
-    border-radius: 4px;
+    padding: 10px;
+    border-radius: 6px;
+    display: inline-block;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 1px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
     color: #15151e;
 }
 
@@ -41,13 +43,44 @@ header p {
     color: #15151e;
 }
 
-/* Contenedor principal */
+/* Navbar */
+nav {
+    background: #1f1f2a;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #74ACDF;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Contenido principal */
 main {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 30px auto;
     padding: 20px;
 }
 
+/* Secciones */
 h2 {
     color: #e10600;
     border-bottom: 2px solid #38383f;
@@ -55,7 +88,31 @@ h2 {
     margin-top: 30px;
 }
 
-/* Estilo para la zona de contacto */
+/* Cards de pilotos */
+.piloto-card {
+    background: #1f1f2a;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.piloto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+}
+
+.piloto-card h3 {
+    color: #74ACDF;
+    margin-top: 0;
+}
+
+.piloto-card p {
+    color: #cccccc;
+}
+
+/* Contacto */
 .contacto-box {
     background-color: #1f1f2a;
     border: 1px solid #38383f;
@@ -65,7 +122,7 @@ h2 {
 }
 
 .contacto-box a {
-    color: #74ACDF; /* Color celeste para el link, combinando con la bandera */
+    color: #74ACDF;
     text-decoration: none;
     font-weight: bold;
 }
@@ -74,18 +131,13 @@ h2 {
     text-decoration: underline;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background: #38383f;
-    margin: 20px 0;
-}
-
+/* Footer */
 footer {
+    background: linear-gradient(to right, #74ACDF, #FFFFFF, #74ACDF);
+    color: #15151e;
     text-align: center;
     padding: 20px;
-    color: #88888d;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: bold;
     margin-top: 50px;
-    border-top: 1px solid #38383f;
 }
