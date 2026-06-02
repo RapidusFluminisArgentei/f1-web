@@ -7,22 +7,33 @@ from datetime import datetime, timezone
 os.makedirs('f1_cache', exist_ok=True)
 fastf1.Cache.enable_cache('f1_cache')
 
-print("🏎️ Conectando con los servidores oficiales de la F1...")
+print("🏎 Conectando con los servidores oficiales de la F1...")
 
 # Le pedimos a FastF1 el calendario de la temporada 2026
 calendario = fastf1.get_event_schedule(2026, include_testing=False)
 
-# Obtenemos la fecha y hora actual EN UTC para que coincida con FastF1
+# Obtenemos la fecha y hora actual EN UTC
 hoy = datetime.now(timezone.utc)
 
-# Filtramos las carreras cuya fecha de sesión sea mayor (posterior) a hoy
+# 1. Armamos la lista de TODO el calendario
+lista_calendario = []
+for idx, carrera in calendario.iterrows():
+    lista_calendario.append({
+        "ronda": int(carrera['RoundNumber']),
+        "nombre_gran_premio": str(carrera['EventName']),
+        "pais": str(carrera['Country']),
+        "ubicacion": str(carrera['Location']),
+        "fecha_carrera": str(carrera['Session5Date'].strftime('%d/%m/%Y')) if hasattr(carrera['Session5Date'], 'strftime') else "TBD",
+        "hora_carrera": str(carrera['Session5Date'].strftime('%H:%M')) if hasattr(carrera['Session5Date'], 'strftime') else "TBD",
+        "ya_paso": bool(carrera['Session5Date'] < hoy) if hasattr(carrera['Session5Date'], 'timezone') else False
+    })
+
+# 2. Buscamos la próxima carrera (la primera futura)
 carreras_futuras = calendario[calendario['Session5Date'] > hoy]
+datos_proxima = None
 
 if not carreras_futuras.empty:
-    # Agarramos la primera de la lista (la más cercana en el tiempo)
     proxima_carrera = carreras_futuras.iloc[0]
-    
-    # Extraemos los datos limpios
     datos_proxima = {
         "nombre_gran_premio": str(proxima_carrera['EventName']),
         "pais": str(proxima_carrera['Country']),
@@ -31,13 +42,14 @@ if not carreras_futuras.empty:
         "hora_carrera": str(proxima_carrera['Session5Date'].strftime('%H:%M'))
     }
 
-    print(f"\n✨ ¡Datos recuperados con éxito!")
-    print(f"📌 Próximo evento: {datos_proxima['nombre_gran_premio']} en {datos_proxima['pais']}")
+# 3. Estructura final con datos agrupados
+f1_datos_completos = {
+    "proxima_carrera": datos_proxima,
+    "calendario_completo": lista_calendario
+}
 
-    # Guardamos en el archivito 'datos.json'
-    with open('datos.json', 'w', encoding='utf-8') as f:
-        json.dump(datos_proxima, f, ensure_ascii=False, indent=4)
+# Guardamos todo en 'datos.json'
+with open('datos.json', 'w', encoding='utf-8') as f:
+    json.dump(f1_datos_completos, f, ensure_ascii=False, indent=4)
 
-    print("\n💾 Archivo 'datos.json' generado correctamente.")
-else:
-    print("\n🏁 No se encontraron más carreras programadas para el resto de la temporada 2026.")
+print("\n💾 ¡Archivo 'datos.json' actualizado con toda la temporada 2026!")

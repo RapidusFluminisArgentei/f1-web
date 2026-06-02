@@ -3,47 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Próxima Carrera</title>
+    <title>F1 Hub - Temporada 2026</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="card">
-        <div class="header">
-            <span class="live-badge">PRÓXIMO EVENTO</span>
-            <h1 id="gran-premio">Cargando carrera...</h1>
+    <div class="container">
+        <!-- 1. SECCIÓN: PRÓXIMA CARRERA -->
+        <div class="card main-card">
+            <div class="header">
+                <span class="live-badge">PRÓXIMO EVENTO</span>
+                <h1 id="gran-premio">Cargando carrera...</h1>
+            </div>
+            
+            <div class="content">
+                <div class="info-group">
+                    <span class="label">País</span>
+                    <p id="pais" class="value">-</p>
+                </div>
+                <div class="info-group">
+                    <span class="label">Ronda</span>
+                    <p id="ronda" class="value">-</p>
+                </div>
+                <div class="info-group">
+                    <span class="label">Fecha</span>
+                    <p id="fecha" class="value">-</p>
+                </div>
+                <div class="info-group">
+                    <span class="label">Hora Oficial (UTC)</span>
+                    <p id="hora" class="value">-</p>
+                </div>
+            </div>
         </div>
-        
-        <div class="content">
-            <div class="info-group">
-                <span class="label">País</span>
-                <p id="pais" class="value">-</p>
-            </div>
-            <div class="info-group">
-                <span class="label">Ronda</span>
-                <p id="ronda" class="value">-</p>
-            </div>
-            <div class="info-group">
-                <span class="label">Fecha</span>
-                <p id="fecha" class="value">-</p>
-            </div>
-            <div class="info-group">
-                <span class="label">Hora Oficial (UTC)</span>
-                <p id="hora" class="value">-</p>
+
+        <!-- 2. SECCIÓN: CALENDARIO COMPLETO -->
+        <div class="calendar-section">
+            <h2>Calendario Completo 2026</h2>
+            <div id="calendario-lista" class="calendar-grid">
+                <!-- Las carreras se van a inyectar dinámicamente acá con JS -->
             </div>
         </div>
     </div>
 
     <script>
-        // Esta es la magia que lee el archivo JSON que generó tu Python
         fetch('datos.json')
             .then(response => response.json())
             .then(data => {
-                // Reemplazamos los textos de la página con los datos reales
-                document.getElementById('gran-premio').innerText = data.nombre_gran_premio;
-                document.getElementById('pais').innerText = data.pais;
-                document.getElementById('ronda').innerText = data.ronda;
-                document.getElementById('fecha').innerText = data.fecha_carrera;
-                document.getElementById('hora').innerText = data.hora_carrera + " hs";
+                // Mapeo de la próxima carrera (Desestructuración del sub-objeto)
+                const proxima = data.proxima_carrera;
+                
+                if (proxima) {
+                    document.getElementById('gran-premio').innerText = proxima.nombre_gran_premio;
+                    document.getElementById('pais').innerText = proxima.pais;
+                    document.getElementById('ronda').innerText = proxima.ronda;
+                    document.getElementById('fecha').innerText = proxima.fecha_carrera;
+                    document.getElementById('hora').innerText = proxima.hora_carrera + " hs";
+                } else {
+                    document.getElementById('gran-premio').innerText = "Fin de temporada 🏁";
+                }
+
+                // Renderizado de todo el calendario
+                const listaContenedor = document.getElementById('calendario-lista');
+                listaContenedor.innerHTML = ''; // Limpiamos carga inicial
+
+                data.calendario_completo.forEach(carrera => {
+                    // Creamos el elemento div para cada tarjeta de carrera
+                    const carreraCard = document.createElement('div');
+                    
+                    // Si ya pasó, le ponemos una clase CSS especial para opacarla
+                    carreraCard.className = `race-strip ${carrera.ya_paso ? 'past-race' : ''}`;
+                    
+                    carreraCard.innerHTML = `
+                        <div class="race-info">
+                            <span class="race-round">R0${carrera.ronda}</span>
+                            <div class="race-details">
+                                <h3>${carrera.nombre_gran_premio}</h3>
+                                <p>${carrera.ubicacion}, ${carrera.pais}</p>
+                            </div>
+                        </div>
+                        <div class="race-date-status">
+                            <span class="race-date">${carrera.fecha_carrera}</span>
+                            <span class="status-tag">${carrera.ya_paso ? 'Finalizado' : 'Próximamente'}</span>
+                        </div>
+                    `;
+                    
+                    listaContenedor.appendChild(carreraCard);
+                });
             })
             .catch(error => {
                 console.error("Error cargando los datos de la F1:", error);
