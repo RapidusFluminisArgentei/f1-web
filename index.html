@@ -3,76 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Rapidus Fluminis Argentei</title>
+    <title>F1 Próxima Carrera</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fuente racing desde Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Header con bandera -->
-    <header>
-        <div class="bandera-container">
-            <h1>🏎️ Rapidus Fluminis Argentei</h1>
-            <p>Homenaje a la velocidad y la mística de Fangio</p>
+    <div class="card">
+        <div class="header">
+            <span class="live-badge">PRÓXIMO EVENTO</span>
+            <h1 id="gran-premio">Cargando carrera...</h1>
         </div>
-    </header>
+        
+        <div class="content">
+            <div class="info-group">
+                <span class="label">País</span>
+                <p id="pais" class="value">-</p>
+            </div>
+            <div class="info-group">
+                <span class="label">Ronda</span>
+                <p id="ronda" class="value">-</p>
+            </div>
+            <div class="info-group">
+                <span class="label">Fecha</span>
+                <p id="fecha" class="value">-</p>
+            </div>
+            <div class="info-group">
+                <span class="label">Hora Oficial (UTC)</span>
+                <p id="hora" class="value">-</p>
+            </div>
+        </div>
+    </div>
 
-    <!-- Navbar -->
-    <nav>
-        <a href="#proxima">Próxima Carrera</a>
-        <a href="#posiciones">Tabla de Posiciones</a>
-        <a href="#fangio">Fangio</a>
-        <a href="#reutemann">Reutemann</a>
-        <a href="#colapinto">Colapinto</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
-    <!-- Contenido principal -->
-    <main>
-        <section id="proxima">
-            <h2>Próxima Carrera</h2>
-            <p>Acá vamos a conectar la API en Python para ver los horarios del próximo Gran Premio de la temporada 2026.</p>
-        </section>
-
-        <section id="posiciones">
-            <h2>Tabla de Posiciones</h2>
-            <p>Próximamente verás el campeonato de pilotos y escuderías en tiempo real.</p>
-        </section>
-
-        <!-- Cards de pilotos -->
-        <section id="fangio" class="piloto-card">
-            <h2>Juan Manuel Fangio</h2>
-            <h3>El Maestro</h3>
-            <p>Quíntuple campeón mundial de Fórmula 1, considerado uno de los mejores pilotos de la historia.</p>
-        </section>
-
-        <section id="reutemann" class="piloto-card">
-            <h2>Carlos Reutemann</h2>
-            <h3>Lole</h3>
-            <p>Piloto argentino que brilló en la F1 en los años 70 y 80, con múltiples victorias y podios.</p>
-        </section>
-
-        <section id="colapinto" class="piloto-card">
-            <h2>Franco Colapinto</h2>
-            <h3>La nueva generación</h3>
-            <p>Promesa argentina en la Fórmula 1, llevando la bandera celeste y blanca al futuro del automovilismo.</p>
-        </section>
-
-        <hr>
-
-        <!-- Contacto -->
-        <section id="contacto" class="contacto-box">
-            <h2>Contacto & Comunidad</h2>
-            <p>¿Querés sumarte al proyecto, aportar ideas o sugerencias? Escribinos a nuestro correo oficial:</p>
-            <p>📩 <strong>Email:</strong> <a href="mailto:rapidus.argenti@gmail.com">rapidus.argenti@gmail.com</a></p>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        © 2026 Rapidus Fluminis Argentei | Proyecto casero sin fines de lucro 🏁
-    </footer>
-
+    <script>
+        // Esta es la magia que lee el archivo JSON que generó tu Python
+        fetch('datos.json')
+            .then(response => response.json())
+            .then(data => {
+                // Reemplazamos los textos de la página con los datos reales
+                document.getElementById('gran-premio').innerText = data.nombre_gran_premio;
+                document.getElementById('pais').innerText = data.pais;
+                document.getElementById('ronda').innerText = data.ronda;
+                document.getElementById('fecha').innerText = data.fecha_carrera;
+                document.getElementById('hora').innerText = data.hora_carrera + " hs";
+            })
+            .catch(error => {
+                console.error("Error cargando los datos de la F1:", error);
+                document.getElementById('gran-premio').innerText = "Error al cargar datos";
+            });
+    </script>
 </body>
 </html>

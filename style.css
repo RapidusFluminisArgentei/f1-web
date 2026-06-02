@@ -1,143 +1,67 @@
-/* Configuración general */
 body {
-    background-color: #15151e;
+    background-color: #0b0f19;
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
 }
 
-/* Header con bandera */
-header {
+.card {
+    background: linear-gradient(145deg, #121826, #1a2337);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 350px;
+    border: 1px solid #23304d;
+}
+
+.header {
+    border-bottom: 2px solid #e10600; /* Rojo F1 */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.live-badge {
     background-color: #e10600;
-    color: #15151e;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
 }
 
-header .bandera-container {
-    background: linear-gradient(
-        to bottom,
-        #74ACDF 0%, #74ACDF 33.33%,
-        #FFFFFF 33.33%, #FFFFFF 66.66%,
-        #74ACDF 66.66%, #74ACDF 100%
-    );
-    padding: 10px;
-    border-radius: 6px;
-    display: inline-block;
+h1 {
+    font-size: 24px;
+    margin: 10px 0 0 0;
+    color: #f1f5f9;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 3rem;
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 12px;
+    color: #64748b;
     text-transform: uppercase;
-    font-family: 'Orbitron', sans-serif;
-    color: #15151e;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
 }
 
-header p {
-    margin: 5px 0 0 0;
-    opacity: 0.9;
-    color: #15151e;
-}
-
-/* Navbar */
-nav {
-    background: #1f1f2a;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: #ffffff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    position: relative;
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background: #74ACDF;
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-/* Contenido principal */
-main {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
-}
-
-/* Secciones */
-h2 {
-    color: #e10600;
-    border-bottom: 2px solid #38383f;
-    padding-bottom: 8px;
-    margin-top: 30px;
-}
-
-/* Cards de pilotos */
-.piloto-card {
-    background: #1f1f2a;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.piloto-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
-}
-
-.piloto-card h3 {
-    color: #74ACDF;
-    margin-top: 0;
-}
-
-.piloto-card p {
-    color: #cccccc;
-}
-
-/* Contacto */
-.contacto-box {
-    background-color: #1f1f2a;
-    border: 1px solid #38383f;
-    padding: 20px;
-    border-radius: 6px;
-    margin-top: 20px;
-}
-
-.contacto-box a {
-    color: #74ACDF;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contacto-box a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background: linear-gradient(to right, #74ACDF, #FFFFFF, #74ACDF);
-    color: #15151e;
-    text-align: center;
-    padding: 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 50px;
+.value {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: #cbd5e1;
 }
