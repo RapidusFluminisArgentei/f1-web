@@ -1,7 +1,209 @@
 {
-    "nombre_gran_premio": "Monaco Grand Prix",
-    "pais": "Monaco",
-    "ronda": 6,
-    "fecha_carrera": "07/06/2026",
-    "hora_carrera": "15:00"
+    "proxima_carrera": {
+        "nombre_gran_premio": "Monaco Grand Prix",
+        "pais": "Monaco",
+        "ronda": 6,
+        "fecha_carrera": "07/06/2026",
+        "hora_carrera": "15:00"
+    },
+    "calendario_completo": [
+        {
+            "ronda": 1,
+            "nombre_gran_premio": "Australian Grand Prix",
+            "pais": "Australia",
+            "ubicacion": "Melbourne",
+            "fecha_carrera": "08/03/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 2,
+            "nombre_gran_premio": "Chinese Grand Prix",
+            "pais": "China",
+            "ubicacion": "Shanghai",
+            "fecha_carrera": "15/03/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 3,
+            "nombre_gran_premio": "Japanese Grand Prix",
+            "pais": "Japan",
+            "ubicacion": "Suzuka",
+            "fecha_carrera": "29/03/2026",
+            "hora_carrera": "14:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 4,
+            "nombre_gran_premio": "Miami Grand Prix",
+            "pais": "United States",
+            "ubicacion": "Miami Gardens",
+            "fecha_carrera": "03/05/2026",
+            "hora_carrera": "13:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 5,
+            "nombre_gran_premio": "Canadian Grand Prix",
+            "pais": "Canada",
+            "ubicacion": "Montréal",
+            "fecha_carrera": "24/05/2026",
+            "hora_carrera": "16:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 6,
+            "nombre_gran_premio": "Monaco Grand Prix",
+            "pais": "Monaco",
+            "ubicacion": "Monte Carlo",
+            "fecha_carrera": "07/06/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 7,
+            "nombre_gran_premio": "Barcelona Grand Prix",
+            "pais": "Spain",
+            "ubicacion": "Barcelona",
+            "fecha_carrera": "14/06/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 8,
+            "nombre_gran_premio": "Austrian Grand Prix",
+            "pais": "Austria",
+            "ubicacion": "Spielberg",
+            "fecha_carrera": "28/06/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 9,
+            "nombre_gran_premio": "British Grand Prix",
+            "pais": "United Kingdom",
+            "ubicacion": "Silverstone",
+            "fecha_carrera": "05/07/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 10,
+            "nombre_gran_premio": "Belgian Grand Prix",
+            "pais": "Belgium",
+            "ubicacion": "Spa-Francorchamps",
+            "fecha_carrera": "19/07/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 11,
+            "nombre_gran_premio": "Hungarian Grand Prix",
+            "pais": "Hungary",
+            "ubicacion": "Budapest",
+            "fecha_carrera": "26/07/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 12,
+            "nombre_gran_premio": "Dutch Grand Prix",
+            "pais": "Netherlands",
+            "ubicacion": "Zandvoort",
+            "fecha_carrera": "23/08/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 13,
+            "nombre_gran_premio": "Italian Grand Prix",
+            "pais": "Italy",
+            "ubicacion": "Monza",
+            "fecha_carrera": "06/09/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 14,
+            "nombre_gran_premio": "Spanish Grand Prix",
+            "pais": "Spain",
+            "ubicacion": "Madrid",
+            "fecha_carrera": "13/09/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 15,
+            "nombre_gran_premio": "Azerbaijan Grand Prix",
+            "pais": "Azerbaijan",
+            "ubicacion": "Baku",
+            "fecha_carrera": "26/09/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 16,
+            "nombre_gran_premio": "Singapore Grand Prix",
+            "pais": "Singapore",
+            "ubicacion": "Marina Bay",
+            "fecha_carrera": "11/10/2026",
+            "hora_carrera": "20:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 17,
+            "nombre_gran_premio": "United States Grand Prix",
+            "pais": "United States",
+            "ubicacion": "Austin",
+            "fecha_carrera": "25/10/2026",
+            "hora_carrera": "15:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 18,
+            "nombre_gran_premio": "Mexico City Grand Prix",
+            "pais": "Mexico",
+            "ubicacion": "Mexico City",
+            "fecha_carrera": "01/11/2026",
+            "hora_carrera": "14:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 19,
+            "nombre_gran_premio": "São Paulo Grand Prix",
+            "pais": "Brazil",
+            "ubicacion": "São Paulo",
+            "fecha_carrera": "08/11/2026",
+            "hora_carrera": "14:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 20,
+            "nombre_gran_premio": "Las Vegas Grand Prix",
+            "pais": "United States",
+            "ubicacion": "Las Vegas",
+            "fecha_carrera": "21/11/2026",
+            "hora_carrera": "20:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 21,
+            "nombre_gran_premio": "Qatar Grand Prix",
+            "pais": "Qatar",
+            "ubicacion": "Lusail",
+            "fecha_carrera": "29/11/2026",
+            "hora_carrera": "19:00",
+            "ya_paso": false
+        },
+        {
+            "ronda": 22,
+            "nombre_gran_premio": "Abu Dhabi Grand Prix",
+            "pais": "United Arab Emirates",
+            "ubicacion": "Yas Marina",
+            "fecha_carrera": "06/12/2026",
+            "hora_carrera": "17:00",
+            "ya_paso": false
+        }
+    ]
 }
