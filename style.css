@@ -97,3 +97,43 @@
     color: #a1a1a8;
     background-color: #15151a;
 }
+
+/* Estilos para la Barra de Navegación */
+.navbar {
+    background-color: #15151a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 2px solid #2a2a35;
+}
+
+.nav-logo {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #a1a1a8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #e10600; /* Rojo F1 */
+}
+
+.nav-links a.disabled {
+    color: #4a4a5a;
+    cursor: not-allowed;
+    pointer-events: none;
+}
