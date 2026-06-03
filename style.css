@@ -2,10 +2,8 @@
    1. ESTILOS GENERALES Y FONDO DINÁMICO
    ========================================================================== */
 body {
-    /* Creamos un degradado oscuro elegante */
     background: linear-gradient(-45deg, #0b0b0d, #15151a, #1a1a24, #0b0b0d);
     background-size: 400% 400%;
-    /* Esta línea hace que el fondo se mueva suavemente solo */
     animation: movimientoFondo 15s ease infinite;
     margin: 0;
     color: #fff;
@@ -13,14 +11,12 @@ body {
     min-height: 100vh;
 }
 
-/* Animación para el movimiento del fondo */
 @keyframes movimientoFondo {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Contenedor principal */
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -28,25 +24,27 @@ body {
 }
 
 /* ==========================================================================
-   2. BARRA DE NAVEGACIÓN
+   2. BARRA DE NAVEGACIÓN (CORREGIDA)
    ========================================================================== */
 .navbar {
-    background-color: rgba(21, 21, 26, 0.8); /* Semi-transparente para que se note el fondo */
-    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado */
+    background-color: rgba(21, 21, 26, 0.85);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Alinea el logo y el menú al centro verticalmente */
     padding: 15px 30px;
     border-bottom: 2px solid #2a2a35;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-sizing: border-box;
 }
 
 .nav-logo {
     display: flex;
-    flex-direction: column; /* Pone la traducción abajo del nombre principal */
+    flex-direction: column;
     text-decoration: none;
+    min-width: 220px; /* Le da espacio reservado para que no choque */
 }
 
 .logo-main {
@@ -57,16 +55,17 @@ body {
 }
 
 .logo-sub {
-    color: #a1a1a8; /* Gris sutil */
-    font-size: 0.8rem; /* Letras más pequeñas */
-    font-style: italic; /* Un toque elegante en cursiva */
+    color: #a1a1a8;
+    font-size: 0.75rem;
+    font-style: italic;
     margin-top: 2px;
-    padding-left: 28px; /* Lo alinea justo abajo del texto, pasando el emoji */
+    padding-left: 28px;
 }
 
 .nav-links {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .nav-links a {
@@ -78,7 +77,7 @@ body {
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #e10600; /* Rojo F1 */
+    color: #e10600;
 }
 
 .nav-links a.disabled {
@@ -135,20 +134,20 @@ body {
 }
 
 /* ==========================================================================
-   4. CALENDARIO
+   4. CALENDARIO CON DETALLE ARGENTINO 🇦🇷
    ========================================================================== */
 .calendar-section {
     margin-top: 40px;
 }
 
 .calendar-section h2 {
-       color: #fff;
-       /* Creamos la bandera de izquierda a derecha: Celeste, Blanco, Sol dorado sutil, Blanco, Celeste */
-       border-bottom: 3px solid;
-       border-image: linear-gradient(to right, #74acdf 0%, #74acdf 35%, #ffffff 45%, #f6b40e 50%, #ffffff 55%, #74acdf 65%, #74acdf 100%) 1;
-       padding-bottom: 10px;
-       margin-bottom: 20px;
-   }
+    color: #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid;
+    /* Bandera argentina degradada fina y elegante */
+    border-image: linear-gradient(to right, #74acdf 0%, #74acdf 35%, #ffffff 45%, #f6b40e 50%, #ffffff 55%, #74acdf 65%, #74acdf 100%) 1;
+}
 
 .calendar-grid {
     display: flex;
@@ -156,7 +155,6 @@ body {
     gap: 12px;
 }
 
-/* Tarjeta de cada carrera */
 .race-strip {
     background-color: rgba(31, 31, 39, 0.7);
     backdrop-filter: blur(5px);
@@ -168,14 +166,13 @@ body {
     align-items: center;
     border-left: 4px solid #e10600;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease; /* Suaviza los movimientos */
+    transition: all 0.3s ease;
 }
 
-/* Efecto dinámico al pasar el mouse por encima */
 .race-strip:hover {
     transform: translateX(8px);
     background-color: rgba(42, 42, 53, 0.9);
-    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.2); /* Sutil brillo rojo */
+    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.2);
 }
 
 .race-info {
@@ -223,14 +220,13 @@ body {
     display: inline-block;
 }
 
-/* Estilo apagado para las carreras pasadas */
 .past-race {
     opacity: 0.4;
     border-left-color: #4a4a5a;
 }
 
 .past-race:hover {
-    box-shadow: none; /* Sin brillo para las viejas */
+    box-shadow: none;
     background-color: rgba(31, 31, 39, 0.7);
 }
 
