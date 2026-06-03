@@ -18,15 +18,22 @@ hoy = datetime.now(timezone.utc)
 # 1. Armamos la lista de TODO el calendario
 lista_calendario = []
 for idx, carrera in calendario.iterrows():
+    fecha_dt = carrera['Session5Date']
+    
+    # Esto guarda la fecha en un formato internacional limpio que JS entiende al toque
+    fecha_iso = fecha_dt.strftime('%Y-%m-%dT%H:%M:%SZ') if hasattr(fecha_dt, 'strftime') else None
+
+    # Verificamos si la carrera ya pasó comparando de forma segura
+    ya_paso_resultado = bool(fecha_dt.tz_localize('UTC') < hoy) if hasattr(fecha_dt, 'tz_localize') else False
+
     lista_calendario.append({
         "ronda": int(carrera['RoundNumber']),
         "nombre_gran_premio": str(carrera['EventName']),
         "pais": str(carrera['Country']),
         "ubicacion": str(carrera['Location']),
-        "fecha_carrera": str(carrera['Session5Date'].strftime('%d/%m/%Y')) if hasattr(carrera['Session5Date'], 'strftime') else "TBD",
-        "hora_carrera": str(carrera['Session5Date'].strftime('%H:%M')) if hasattr(carrera['Session5Date'], 'strftime') else "TBD",
-        "ya_paso": bool(carrera['Session5Date'] < hoy) if hasattr(carrera['Session5Date'], 'timezone') else False
-    })
+        "fecha_iso": fecha_iso,        # <-- Agregamos esto
+        "ya_paso": ya_paso_resultado   # <-- Arreglamos el bug de las pasadas
+    }
 
 # 2. Buscamos la próxima carrera (la primera futura)
 carreras_futuras = calendario[calendario['Session5Date'] > hoy]
@@ -38,8 +45,7 @@ if not carreras_futuras.empty:
         "nombre_gran_premio": str(proxima_carrera['EventName']),
         "pais": str(proxima_carrera['Country']),
         "ronda": int(proxima_carrera['RoundNumber']),
-        "fecha_carrera": str(proxima_carrera['Session5Date'].strftime('%d/%m/%Y')),
-        "hora_carrera": str(proxima_carrera['Session5Date'].strftime('%H:%M'))
+        "fecha_iso": proxima_carrera['Session5Date'].strftime('%Y-%m-%dT%H:%M:%SZ') # <-- Cambiado a ISO
     }
 
 # 3. Estructura final con datos agrupados
