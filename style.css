@@ -1,33 +1,149 @@
-/* Contenedor principal para centrar la página */
+/* ==========================================================================
+   1. ESTILOS GENERALES Y FONDO DINÁMICO
+   ========================================================================== */
+body {
+    /* Creamos un degradado oscuro elegante */
+    background: linear-gradient(-45deg, #0b0b0d, #15151a, #1a1a24, #0b0b0d);
+    background-size: 400% 400%;
+    /* Esta línea hace que el fondo se mueva suavemente solo */
+    animation: movimientoFondo 15s ease infinite;
+    margin: 0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* Animación para el movimiento del fondo */
+@keyframes movimientoFondo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedor principal */
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
 }
 
-/* Espaciado de la sección del calendario */
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN
+   ========================================================================== */
+.navbar {
+    background-color: rgba(21, 21, 26, 0.8); /* Semi-transparente para que se note el fondo */
+    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-bottom: 2px solid #2a2a35;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #a1a1a8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #e10600; /* Rojo F1 */
+}
+
+.nav-links a.disabled {
+    color: #4a4a5a;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   3. TARJETAS Y SECCIONES
+   ========================================================================== */
+.card {
+    background-color: #1f1f27;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #2a2a35;
+}
+
+.main-card {
+    border-left: 5px solid #e10600;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.live-badge {
+    background-color: #e10600;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.info-group .label {
+    color: #a1a1a8;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.info-group .value {
+    margin: 5px 0 0 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   4. CALENDARIO
+   ========================================================================== */
 .calendar-section {
     margin-top: 40px;
 }
 
 .calendar-section h2 {
     color: #fff;
-    border-bottom: 2px solid #e10600; /* Rojo F1 clásico */
+    border-bottom: 2px solid #e10600;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-/* Contenedor tipo grilla/lista */
 .calendar-grid {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-/* Tarjeta individual de cada carrera del calendario */
+/* Tarjeta de cada carrera */
 .race-strip {
-    background-color: #1f1f27;
+    background-color: rgba(31, 31, 39, 0.7);
+    backdrop-filter: blur(5px);
     color: #fff;
     border-radius: 8px;
     padding: 15px 20px;
@@ -35,11 +151,15 @@
     justify-content: space-between;
     align-items: center;
     border-left: 4px solid #e10600;
-    transition: transform 0.2s ease;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease; /* Suaviza los movimientos */
 }
 
+/* Efecto dinámico al pasar el mouse por encima */
 .race-strip:hover {
-    transform: translateX(5px);
+    transform: translateX(8px);
+    background-color: rgba(42, 42, 53, 0.9);
+    box-shadow: 0 4px 15px rgba(225, 6, 0, 0.2); /* Sutil brillo rojo */
 }
 
 .race-info {
@@ -83,57 +203,22 @@
     padding: 2px 8px;
     border-radius: 4px;
     background-color: #2a2a35;
-    color: #00ff88; /* Verde para próximas carreras */
+    color: #00ff88;
     display: inline-block;
 }
 
-/* Estilo apagado para las carreras que ya se corrieron */
+/* Estilo apagado para las carreras pasadas */
 .past-race {
-    opacity: 0.5;
+    opacity: 0.4;
     border-left-color: #4a4a5a;
+}
+
+.past-race:hover {
+    box-shadow: none; /* Sin brillo para las viejas */
+    background-color: rgba(31, 31, 39, 0.7);
 }
 
 .past-race .status-tag {
     color: #a1a1a8;
     background-color: #15151a;
-}
-
-/* Estilos para la Barra de Navegación */
-.navbar {
-    background-color: #15151a;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    border-bottom: 2px solid #2a2a35;
-}
-
-.nav-logo {
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-.nav-links {
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: #a1a1a8;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    color: #e10600; /* Rojo F1 */
-}
-
-.nav-links a.disabled {
-    color: #4a4a5a;
-    cursor: not-allowed;
-    pointer-events: none;
 }

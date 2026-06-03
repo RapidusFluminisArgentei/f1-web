@@ -54,43 +54,60 @@
     </div>
 
     <script>
+        // Configuramos el formateador para forzar siempre la hora de Argentina
+        const opcionesFecha = { timeZone: 'America/Argentina/Buenos_Aires', day: '2-digit', month: '2-digit', year: 'numeric' };
+        const opcionesHora = { timeZone: 'America/Argentina/Buenos_Aires', hour: '2-digit', minute: '2-digit', hour12: false };
+
         fetch('datos.json')
             .then(response => response.json())
             .then(data => {
-                // Mapeo de la próxima carrera (Desestructuración del sub-objeto)
+                // 1. CONTROL DE LA PRÓXIMA CARRERA
                 const proxima = data.proxima_carrera;
                 
-                if (proxima) {
+                if (proxima && proxima.fecha_iso) {
+                    const fechaProxima = new Date(proxima.fecha_iso);
+                    
                     document.getElementById('gran-premio').innerText = proxima.nombre_gran_premio;
                     document.getElementById('pais').innerText = proxima.pais;
                     document.getElementById('ronda').innerText = proxima.ronda;
-                    document.getElementById('fecha').innerText = proxima.fecha_carrera;
-                    document.getElementById('hora').innerText = proxima.hora_carrera + " hs";
+                    
+                    // Convertimos la fecha internacional a la de Argentina
+                    document.getElementById('fecha').innerText = fechaProxima.toLocaleDateString('es-AR', opcionesFecha);
+                    document.getElementById('hora').innerText = fechaProxima.toLocaleTimeString('es-AR', opcionesHora) + " hs";
                 } else {
                     document.getElementById('gran-premio').innerText = "Fin de temporada 🏁";
                 }
 
-                // Renderizado de todo el calendario
+                // 2. RENDERIZADO DEL CALENDARIO COMPLETO
                 const listaContenedor = document.getElementById('calendario-lista');
                 listaContenedor.innerHTML = ''; // Limpiamos carga inicial
 
                 data.calendario_completo.forEach(carrera => {
-                    // Creamos el elemento div para cada tarjeta de carrera
+                    if (!carrera.fecha_iso) return;
+
+                    // Traducimos la fecha de esta carrera específica a Argentina
+                    const fechaCarrera = new Date(carrera.fecha_iso);
+                    const fechaFormateada = fechaCarrera.toLocaleDateString('es-AR', opcionesFecha);
+                    const horaFormateada = fechaCarrera.toLocaleTimeString('es-AR', opcionesHora);
+
                     const carreraCard = document.createElement('div');
                     
-                    // Si ya pasó, le ponemos una clase CSS especial para opacarla
+                    // Si ya pasó, se le aplica la opacidad que definimos en el CSS
                     carreraCard.className = `race-strip ${carrera.ya_paso ? 'past-race' : ''}`;
+                    
+                    // Formateamos el número de ronda para que no quede "R010" en el futuro
+                    const nroRonda = carrera.ronda < 10 ? `R0${carrera.ronda}` : `R${carrera.ronda}`;
                     
                     carreraCard.innerHTML = `
                         <div class="race-info">
-                            <span class="race-round">R0${carrera.ronda}</span>
+                            <span class="race-round">${nroRonda}</span>
                             <div class="race-details">
                                 <h3>${carrera.nombre_gran_premio}</h3>
-                                <p>${carrera.ubicacion}, ${carrera.pais}</p>
+                                <p>${carrera.ubicacion}, ${carrera.pais} — ${horaFormateada} hs</p>
                             </div>
                         </div>
                         <div class="race-date-status">
-                            <span class="race-date">${carrera.fecha_carrera}</span>
+                            <span class="race-date">${fechaFormateada}</span>
                             <span class="status-tag">${carrera.ya_paso ? 'Finalizado' : 'Próximamente'}</span>
                         </div>
                     `;
