@@ -44,10 +44,24 @@ body {
 }
 
 .nav-logo {
+    display: flex;
+    flex-direction: column; /* Pone la traducción abajo del nombre principal */
+    text-decoration: none;
+}
+
+.logo-main {
     color: #fff;
     font-weight: bold;
-    text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.logo-sub {
+    color: #a1a1a8; /* Gris sutil */
+    font-size: 0.8rem; /* Letras más pequeñas */
+    font-style: italic; /* Un toque elegante en cursiva */
+    margin-top: 2px;
+    padding-left: 28px; /* Lo alinea justo abajo del texto, pasando el emoji */
 }
 
 .nav-links {
@@ -128,11 +142,13 @@ body {
 }
 
 .calendar-section h2 {
-    color: #fff;
-    border-bottom: 2px solid #e10600;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
+       color: #fff;
+       /* Creamos la bandera de izquierda a derecha: Celeste, Blanco, Sol dorado sutil, Blanco, Celeste */
+       border-bottom: 3px solid;
+       border-image: linear-gradient(to right, #74acdf 0%, #74acdf 35%, #ffffff 45%, #f6b40e 50%, #ffffff 55%, #74acdf 65%, #74acdf 100%) 1;
+       padding-bottom: 10px;
+       margin-bottom: 20px;
+   }
 
 .calendar-grid {
     display: flex;
