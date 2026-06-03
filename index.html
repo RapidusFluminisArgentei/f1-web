@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- BARRA DE NAVEGACIÓN -->
+    <!-- BARRA DE NAVEGACIÓN -->
     <nav class="navbar">
         <a href="index.html" class="nav-logo">🏁 F1 Hub</a>
         <div class="nav-links">
@@ -16,6 +16,7 @@
             <a href="#" class="disabled">Franco Colapinto (Próximamente)</a>
         </div>
     </nav>
+
     <div class="container">
         <!-- 1. SECCIÓN: PRÓXIMA CARRERA -->
         <div class="card main-card">
@@ -42,8 +43,6 @@
                     <p id="hora" class="value">-</p>
                 </div>
             </div>
-                
-            </div>
         </div>
 
         <!-- 2. SECCIÓN: CALENDARIO COMPLETO -->
@@ -55,6 +54,7 @@
         </div>
     </div>
 
+    <!-- LÓGICA EN JAVASCRIPT -->
     <script>
         // Configuramos el formateador para forzar siempre la hora de Argentina
         const opcionesFecha = { timeZone: 'America/Argentina/Buenos_Aires', day: '2-digit', month: '2-digit', year: 'numeric' };
