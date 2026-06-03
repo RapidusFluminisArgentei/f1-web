@@ -15,38 +15,6 @@
             "ya_paso": true
         },
         {
-            "ronda": 2,
-            "nombre_gran_premio": "Chinese Grand Prix",
-            "pais": "China",
-            "ubicacion": "Shanghai",
-            "fecha_iso": "2026-03-15T07:00:00Z",
-            "ya_paso": true
-        },
-        {
-            "ronda": 3,
-            "nombre_gran_premio": "Japanese Grand Prix",
-            "pais": "Japan",
-            "ubicacion": "Suzuka",
-            "fecha_iso": "2026-03-29T05:00:00Z",
-            "ya_paso": true
-        },
-        {
-            "ronda": 4,
-            "nombre_gran_premio": "Miami Grand Prix",
-            "pais": "United States",
-            "ubicacion": "Miami Gardens",
-            "fecha_iso": "2026-05-03T17:00:00Z",
-            "ya_paso": true
-        },
-        {
-            "ronda": 5,
-            "nombre_gran_premio": "Canadian Grand Prix",
-            "pais": "Canada",
-            "ubicacion": "Montréal",
-            "fecha_iso": "2026-05-24T18:00:00Z",
-            "ya_paso": true
-        },
-        {
             "ronda": 6,
             "nombre_gran_premio": "Monaco Grand Prix",
             "pais": "Monaco",
@@ -60,14 +28,6 @@
             "pais": "Spain",
             "ubicacion": "Barcelona",
             "fecha_iso": "2026-06-14T13:00:00Z",
-            "ya_paso": false
-        },
-        {
-            "ronda": 8,
-            "nombre_gran_premio": "Austrian Grand Prix",
-            "pais": "Austria",
-            "ubicacion": "Spielberg",
-            "fecha_iso": "2026-06-28T13:00:00Z",
             "ya_paso": false
         }
     ]
