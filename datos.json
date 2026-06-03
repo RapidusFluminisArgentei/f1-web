@@ -6,29 +6,26 @@
         "fecha_iso": "2026-06-07T13:00:00Z"
     },
     "calendario_completo": [
-        {
-            "ronda": 1,
-            "nombre_gran_premio": "Australian Grand Prix",
-            "pais": "Australia",
-            "ubicacion": "Melbourne",
-            "fecha_iso": "2026-03-08T05:00:00Z",
-            "ya_paso": true
-        },
-        {
-            "ronda": 6,
-            "nombre_gran_premio": "Monaco Grand Prix",
-            "pais": "Monaco",
-            "ubicacion": "Monte Carlo",
-            "fecha_iso": "2026-06-07T13:00:00Z",
-            "ya_paso": false
-        },
-        {
-            "ronda": 7,
-            "nombre_gran_premio": "Barcelona Grand Prix",
-            "pais": "Spain",
-            "ubicacion": "Barcelona",
-            "fecha_iso": "2026-06-14T13:00:00Z",
-            "ya_paso": false
-        }
+        { "ronda": 1, "nombre_gran_premio": "Australian Grand Prix", "pais": "Australia", "ubicacion": "Melbourne", "fecha_iso": "2026-03-08T05:00:00Z", "ya_paso": true },
+        { "ronda": 2, "nombre_gran_premio": "Chinese Grand Prix", "pais": "China", "ubicacion": "Shanghai", "fecha_iso": "2026-03-15T07:00:00Z", "ya_paso": true },
+        { "ronda": 3, "nombre_gran_premio": "Japanese Grand Prix", "pais": "Japan", "ubicacion": "Suzuka", "fecha_iso": "2026-03-29T05:00:00Z", "ya_paso": true },
+        { "ronda": 4, "nombre_gran_premio": "Miami Grand Prix", "pais": "United States", "ubicacion": "Miami Gardens", "fecha_iso": "2026-05-03T17:00:00Z", "ya_paso": true },
+        { "ronda": 5, "nombre_gran_premio": "Canadian Grand Prix", "pais": "Canada", "ubicacion": "Montréal", "fecha_iso": "2026-05-24T18:00:00Z", "ya_paso": true },
+        { "ronda": 6, "nombre_gran_premio": "Monaco Grand Prix", "pais": "Monaco", "ubicacion": "Monte Carlo", "fecha_iso": "2026-06-07T13:00:00Z", "ya_paso": false },
+        { "ronda": 7, "nombre_gran_premio": "Barcelona Grand Prix", "pais": "Spain", "ubicacion": "Barcelona", "fecha_iso": "2026-06-14T13:00:00Z", "ya_paso": false },
+        { "ronda": 8, "nombre_gran_premio": "Austrian Grand Prix", "pais": "Austria", "ubicacion": "Spielberg", "fecha_iso": "2026-06-28T13:00:00Z", "ya_paso": false },
+        { "ronda": 9, "nombre_gran_premio": "British Grand Prix", "pais": "United Kingdom", "ubicacion": "Silverstone", "fecha_iso": "2026-07-05T13:00:00Z", "ya_paso": false },
+        { "ronda": 10, "nombre_gran_premio": "Belgian Grand Prix", "pais": "Belgium", "ubicacion": "Spa-Francorchamps", "fecha_iso": "2026-07-19T13:00:00Z", "ya_paso": false },
+        { "ronda": 11, "nombre_gran_premio": "Hungarian Grand Prix", "pais": "Hungary", "ubicacion": "Budapest", "fecha_iso": "2026-07-26T13:00:00Z", "ya_paso": false },
+        { "ronda": 12, "nombre_gran_premio": "Dutch Grand Prix", "pais": "Netherlands", "ubicacion": "Zandvoort", "fecha_iso": "2026-08-23T13:00:00Z", "ya_paso": false },
+        { "ronda": 13, "nombre_gran_premio": "Italian Grand Prix", "pais": "Italy", "ubicacion": "Monza", "fecha_iso": "2026-08-30T13:00:00Z", "ya_paso": false },
+        { "ronda": 14, "nombre_gran_premio": "Azerbaijan Grand Prix", "pais": "Azerbaijan", "ubicacion": "Baku", "fecha_iso": "2026-09-20T11:00:00Z", "ya_paso": false },
+        { "ronda": 15, "nombre_gran_premio": "Singapore Grand Prix", "pais": "Singapore", "ubicacion": "Marina Bay", "fecha_iso": "2026-10-04T12:00:00Z", "ya_paso": false },
+        { "ronda": 16, "nombre_gran_premio": "United States Grand Prix", "pais": "United States", "ubicacion": "Austin", "fecha_iso": "2026-10-18T19:00:00Z", "ya_paso": false },
+        { "ronda": 17, "nombre_gran_premio": "Mexico Grand Prix", "pais": "Mexico", "ubicacion": "Mexico City", "fecha_iso": "2026-10-25T19:00:00Z", "ya_paso": false },
+        { "ronda": 18, "nombre_gran_premio": "São Paulo Grand Prix", "pais": "Brazil", "ubicacion": "Interlagos", "fecha_iso": "2026-11-01T17:00:00Z", "ya_paso": false },
+        { "ronda": 19, "nombre_gran_premio": "Las Vegas Grand Prix", "pais": "United States", "ubicacion": "Las Vegas", "fecha_iso": "2026-11-22T06:00:00Z", "ya_paso": false },
+        { "ronda": 20, "nombre_gran_premio": "Qatar Grand Prix", "pais": "Qatar", "ubicacion": "Lusail", "fecha_iso": "2026-11-29T15:00:00Z", "ya_paso": false },
+        { "ronda": 21, "nombre_gran_premio": "Abu Dhabi Grand Prix", "pais": "UAE", "ubicacion": "Yas Marina", "fecha_iso": "2026-12-06T13:00:00Z", "ya_paso": false }
     ]
 }
