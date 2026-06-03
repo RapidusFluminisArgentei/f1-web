@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F1 Hub - Temporada 2026</title>
+    <title>Rapidus Argentinus - F1 Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- BARRA DE NAVEGACIÓN -->
     <nav class="navbar">
-        <nav class="navbar">
-       <a href="index.html" class="nav-logo">
-           <span class="logo-main">🏁 Rapidus Argentinus</span>
-           <span class="logo-sub">El veloz argentino</span>
-       </a>
+        <a href="index.html" class="nav-logo">
+            <span class="logo-main">🏁 Rapidus Argentinus</span>
+            <span class="logo-sub">El veloz argentino</span>
+        </a>
         <div class="nav-links">
             <a href="index.html" class="active">Calendario 2026</a>
             <a href="fangio.html">Juan Manuel Fangio</a>
@@ -22,7 +20,6 @@
     </nav>
 
     <div class="container">
-        <!-- 1. SECCIÓN: PRÓXIMA CARRERA -->
         <div class="card main-card">
             <div class="header">
                 <span class="live-badge">PRÓXIMO EVENTO</span>
@@ -49,59 +46,47 @@
             </div>
         </div>
 
-        <!-- 2. SECCIÓN: CALENDARIO COMPLETO -->
         <div class="calendar-section">
             <h2>Calendario Completo 2026</h2>
             <div id="calendario-lista" class="calendar-grid">
-                <!-- Las carreras se van a inyectar dinámicamente acá con JS -->
-            </div>
+                </div>
         </div>
     </div>
 
-    <!-- LÓGICA EN JAVASCRIPT -->
     <script>
-        // Configuramos el formateador para forzar siempre la hora de Argentina
         const opcionesFecha = { timeZone: 'America/Argentina/Buenos_Aires', day: '2-digit', month: '2-digit', year: 'numeric' };
         const opcionesHora = { timeZone: 'America/Argentina/Buenos_Aires', hour: '2-digit', minute: '2-digit', hour12: false };
 
         fetch('datos.json')
             .then(response => response.json())
             .then(data => {
-                // 1. CONTROL DE LA PRÓXIMA CARRERA
+                // 1. PRÓXIMA CARRERA
                 const proxima = data.proxima_carrera;
-                
                 if (proxima && proxima.fecha_iso) {
                     const fechaProxima = new Date(proxima.fecha_iso);
-                    
                     document.getElementById('gran-premio').innerText = proxima.nombre_gran_premio;
                     document.getElementById('pais').innerText = proxima.pais;
                     document.getElementById('ronda').innerText = proxima.ronda;
-                    
-                    // Convertimos la fecha internacional a la de Argentina
                     document.getElementById('fecha').innerText = fechaProxima.toLocaleDateString('es-AR', opcionesFecha);
                     document.getElementById('hora').innerText = fechaProxima.toLocaleTimeString('es-AR', opcionesHora) + " hs";
                 } else {
                     document.getElementById('gran-premio').innerText = "Fin de temporada 🏁";
                 }
 
-                // 2. RENDERIZADO DEL CALENDARIO COMPLETO
+                // 2. CALENDARIO COMPLETO
                 const listaContenedor = document.getElementById('calendario-lista');
-                listaContenedor.innerHTML = ''; // Limpiamos carga inicial
+                listaContenedor.innerHTML = '';
 
                 data.calendario_completo.forEach(carrera => {
                     if (!carrera.fecha_iso) return;
 
-                    // Traducimos la fecha de esta carrera específica a Argentina
                     const fechaCarrera = new Date(carrera.fecha_iso);
                     const fechaFormateada = fechaCarrera.toLocaleDateString('es-AR', opcionesFecha);
                     const horaFormateada = fechaCarrera.toLocaleTimeString('es-AR', opcionesHora);
 
                     const carreraCard = document.createElement('div');
-                    
-                    // Si ya pasó, se le aplica la opacidad que definimos en el CSS
                     carreraCard.className = `race-strip ${carrera.ya_paso ? 'past-race' : ''}`;
                     
-                    // Formateamos el número de ronda para que no quede "R010" en el futuro
                     const nroRonda = carrera.ronda < 10 ? `R0${carrera.ronda}` : `R${carrera.ronda}`;
                     
                     carreraCard.innerHTML = `
@@ -117,12 +102,11 @@
                             <span class="status-tag">${carrera.ya_paso ? 'Finalizado' : 'Próximamente'}</span>
                         </div>
                     `;
-                    
                     listaContenedor.appendChild(carreraCard);
                 });
             })
             .catch(error => {
-                console.error("Error cargando los datos de la F1:", error);
+                console.error("Error:", error);
                 document.getElementById('gran-premio').innerText = "Error al cargar datos";
             });
     </script>
