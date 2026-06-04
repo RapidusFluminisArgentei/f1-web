@@ -1,420 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuitos 2026 - Rapidus Argentinus</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .circuit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .circuit-layout {
-            width: 100%;
-            height: 140px;
-            object-fit: contain;
-            margin: 10px 0;
-            filter: drop-shadow(0px 4px 6px rgba(225, 6, 0, 0.25));
-        }
-        .tech-specs {
-            background-color: rgba(255, 255, 255, 0.04);
-            border-radius: 6px;
-            padding: 10px;
-            margin: 12px 0;
-            font-size: 0.85rem;
-        }
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
-            padding-bottom: 3px;
-        }
-        .spec-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        .spec-label { color: #a1a1a8; }
-        .spec-value { color: #fff; font-weight: bold; }
-
-        .map-container {
-            width: 100%;
-            height: 160px;
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid #2a2a35;
-            margin-top: 10px;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            filter: grayscale(100%) invert(92%) contrast(83%);
-        }
-        .circuit-icon { font-size: 1.8rem; float: right; }
-        .race-number {
-            background: #e30613;
-            color: white;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-right: 5px;
-            vertical-align: middle;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circuitos 2026 - Rapidus Argentinus</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .circuit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .circuit-layout {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      margin: 10px 0;
+      filter: drop-shadow(0px 4px 6px rgba(225, 6, 0, 0.25));
+    }
+    .circuit-icon { font-size: 1.8rem; float: right; }
+    .race-number {
+      background: #e30613;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="nav-logo">
-            <span class="logo-main">🏁 Rapidus Argentinus</span>
-            <span class="logo-sub">El veloz argentino</span>
-        </a>
-        <div class="nav-links">
-            <a href="index.html">Calendario 2026</a>
-            <a href="fangio.html">Juan Manuel Fangio</a>
-            <a href="colapinto.html">Franco Colapinto</a>
-            <a href="f2-f3.html">F2 & F3 Hub</a>
-            <a href="circuitos.html" class="active">Circuitos</a>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="card main-card" style="border-left-color: #e30613;">
-            <div class="header">
-                <h1>Guía de Trazados 2026</h1>
-                <p style="color: #a1a1a8; margin-top: 5px;">Las 21 paradas oficiales del campeonato analizadas al detalle con mapas interactivos.</p>
-            </div>
-        </div>
-
-        <!-- REJILLA DE CIRCUITOS -->
-        <div class="circuit-grid">
-            
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇦🇺</div>
-                <h2><span class="race-number">R01</span>Albert Park</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Melbourne</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Albert_Park_Circuit_2022.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Trazado semipermanente muy fluido que rodea el lago del parque. Sus zonas DRS veloces exigen excelente estabilidad en frenada.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.278 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Semipermanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.106518177579!2d144.9664531!3d-37.8427782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b204663c77%3A0x7d6a54508e68cf0a!2sAlbert%20Park%20Grand%20Prix%20Circuit!5e0!3m2!1ses-419!2sar!4v1715000000000" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇨🇳</div>
-                <h2><span class="race-number">R02</span>Shanghai Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Shanghai</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Shanghai_International_Circuit-2004.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Destaca por su primera curva en forma de caracol que nunca termina y una de las rectas más largas del mundial, ideal para sobrepasos.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.451 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.0204735391307!2d121.2181513!3d31.3366444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b25916053bcba9%3A0x5a18a0ebc7df5d!2sCircuito%20Internacional%20de%20Shangh%C3%A1i!5e0!3m2!1ses-419!2sar!4v1715000000001" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇯🇵</div>
-                <h2><span class="race-number">R03</span>Suzuka Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Suzuka</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Suzuka_circuit_map--2005.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">El único circuito en forma de "8". Sus míticas eses enlazadas iniciales y la curva rápida 130R exigen una carga aerodinámica masiva.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.807 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.435747684065!2d136.5385614!3d34.8444444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003923a1a679469%3A0x6968d90fa63b2f8a!2sCircuito%20de%20Suzuka!5e0!3m2!1ses-419!2sar!4v1715000000002" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇺🇸</div>
-                <h2><span class="race-number">R04</span>Miami Autodrome</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Miami Gardens</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Miami_International_Autodrome_2022_Layout.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Ubicado alrededor del Hard Rock Stadium. Combina rectas kilométricas de alta velocidad con un sector revirado extremadamente lento.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.412 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.347318712217!2d-80.2413112!3d25.9536978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b1db1eb40539%3A0x44d32906b3a9856f!2sHard%20Rock%20Stadium!5e0!3m2!1ses-419!2sar!4v1715000000003" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇨🇦</div>
-                <h2><span class="race-number">R05</span>Gilles Villeneuve</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Montréal</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Circuit_Gilles_Villeneuve_2002.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Pista semipermanente de stop-and-go. Los muros están pegados, destacando el famoso 'Muro de los Campeones' al cierre de la vuelta.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.361 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Semipermanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.133221379435!2d-73.5250493!3d45.5033092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b9db1a4dbe1%3A0xbdfe1030e5cd2d69!2sCircuito%20Gilles%20Villeneuve!5e0!3m2!1ses-419!2sar!4v1715000000004" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇲🇨</div>
-                <h2><span class="race-number">R06</span>Circuit de Monaco</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Monte Carlo</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Monte_Carlo_Formula_1_track_map.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">La joya de la corona. Calles estrechas llenas de historia donde la precisión milimétrica roza las barreras en cada curva.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">3.337 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.0963073289056!2d7.420235312351221!3d43.73977534741366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cda043b817fa99%3A0x296cf9b8be449df!2sCircuito%20de%20M%C3%B3naco!5e0!3m2!1ses-419!2sar!4v1710000000000" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇪🇸</div>
-                <h2><span class="race-number">R07</span>Circuit de Barcelona</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Barcelona</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Circuit_Catalunya_2023.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">El laboratorio de pruebas clásico de la F1. Su combinación de curvas rápidas de apoyo y tramos técnicos mide el balance real del monoplaza.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.657 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.770956965171!2d2.2586111!3d41.5700000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4be605380b2a7%3A0x956041ec18357f8!2sCircuito%20de%20Barcelona-Catalu%C3%B1a!5e0!3m2!1ses-419!2sar!4v1715000000005" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇦🇹</div>
-                <h2><span class="race-number">R08</span>Red Bull Ring</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Spielberg</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Circuit_Red_Bull_Ring.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Vuelta corta pero de altísima intensidad enclavada en las montañas de Estiria. Sus fuertes desniveles exigen tracción perfecta.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.318 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.125917833519!2d14.7625!3d47.2197222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4771be57d23f39cf%3A0xbbf0ff357bc8ff8b!2sRed%20Bull%20Ring!5e0!3m2!1ses-419!2sar!4v1715000000006" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇬🇧</div>
-                <h2><span class="race-number">R09</span>Silverstone Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Northamptonshire</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Silverstone_Circuit_2020.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">La cuna de la F1. Destaca por curvas rapidísimas como Copse, Maggots y Becketts, donde los neumáticos sufren cargas extremas.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.891 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.331580879899!2d-1.0182436!3d52.073302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877239326bbfaff%3A0x6fb52084c07fc738!2sCircuito%20de%20Silverstone!5e0!3m2!1ses-419!2sar!4v1715000000007" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇧🇪</div>
-                <h2><span class="race-number">R10</span>Spa-Francorchamps</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Stavelot</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Spa-Francorchamps_of_Formula_1.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">El trazado más largo de la temporada. Famoso mundialmente por el vertiginoso ascenso ciego de la mítica curva Eau Rouge.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">7.004 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.114144365851!2d5.9691353!3d50.4435833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0611e05d95955%3A0xe9882260492160d2!2sCircuito%20de%20Spa-Francorchamps!5e0!3m2!1ses-419!2sar!4v1715000000008" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇭🇺</div>
-                <h2><span class="race-number">R11</span>Hungaroring</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Budapest</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Hungaroring.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Conocido como un "monoplaza de karting gigante". Pista estrecha, revirada y calurosa donde clasificar arriba lo es todo.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.381 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2691.077259160565!2d19.2485116!3d47.5830219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741bc6da68a3e0b%3A0xa59f77f7223049b6!2sHungaroring!5e0!3m2!1ses-419!2sar!4v1715000000009" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇳🇱</div>
-                <h2><span class="race-number">R12</span>Circuit Zandvoort</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Zandvoort</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Circuit_Zandvoort_2020.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Una pista de la vieja escuela rodeada por dunas de arena. Destacan sus curvas peraltadas con inclinaciones extremas estilo oval.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.259 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.5390098939634!2d4.5392296!3d52.3862592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5ec19e7cf45c5%3A0x6009852be8374d8d!2sCircuito%20de%20Zandvoort!5e0!3m2!1ses-419!2sar!4v1715000000010" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇮🇹</div>
-                <h2><span class="race-number">R13</span>Autodromo de Monza</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Monza</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Monza_track_map.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">El "Templo de la Velocidad". Configuración de mínima carga aerodinámica para volar en rectas rompiendo récords de velocidad punta.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.793 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.3150821639965!2d9.278571012431718!3d45.62030062334812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786b85cb15945db%3A0x6bda194f13da3a!2sAutodromo%20Nazionale%20Monza!5e0!3m2!1ses-419!2sar!4v1710000000000" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇦🇿</div>
-                <h2><span class="race-number">R14</span>Baku City Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Baku</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Baku_City_Circuit_F1.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Urbano salvaje. Mezcla una zona técnica ultra estrecha junto al castillo medieval con la recta principal más veloz del mundo.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">6.003 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.3853112876113!2d49.8519999!3d40.378036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd3ba5411%3A0x7bfa006322b27077!2sCircuito%20de%20Carreras%20de%20Bak%C3%BA!5e0!3m2!1ses-419!2sar!4v1715000000011" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇸🇬</div>
-                <h2><span class="race-number">R15</span>Marina Bay Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Marina Bay</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Marina_Bay_Street_Circuit_2023.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Carrera nocturna extenuante bajo una humedad sofocante. Exige máxima concentración absoluta entre baches y muros implacables.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.940 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8188185994246!2d103.8584869!3d1.2825442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19abbb40bfeb%3A0xa64b8bb896e05d04!2sCircuito%20callejero+de+Marina+Bay!5e0!3m2!1ses-419!2sar!4v1715000000012" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇺🇸</div>
-                <h2><span class="race-number">R16</span>Circuit of the Americas</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Austin</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Austin_circuit.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Trazado moderno con una espectacular y empinada subida hacia la curva 1. Se inspira en las mejores curvas de Europa.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.513 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.7820468305364!2d-97.6358824!3d30.1328056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b1da98b9dc1d%3A0x6e2f1e29e00ec773!2sCircuito%20de%20las%20Am%C3%A9ricas!5e0!3m2!1ses-419!2sar!4v1715000000013" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇲🇽</div>
-                <h2><span class="race-number">R17</span>Hermanos Rodríguez</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Mexico City</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Autodromo_Hermanos_Rodriguez_2015.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Ubicado a más de 2200 metros de altitud. El aire enrarecido reduce drásticamente el agarre aerodinámico y la refrigeración.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.304 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8837267156942!2d-99.0911762!3d19.4044955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fc1e2f7bf28b%3A0xda206f407b7b1346!2sAut%C3%B3dromo%20Hermanos%20Rodr%C3%ADguez!5e0!3m2!1ses-419!2sar!4v1715000000014" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇧🇷</div>
-                <h2><span class="race-number">R18</span>Interlagos Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">São Paulo</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Circuit_Interlagos.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Autódromo sudamericano clásico que gira en sentido antihorario. Sus marcados desniveles y clima cambiante crean caos garantizado.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.309 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.647313861211!2d-46.6994112!3d-23.7011111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4fbc6bb59ed7%3A0x2db4e805545fbc5f!2sAut%C3%B3dromo%20Jos%C3%A9%20Carlos%20Pace!5e0!3m2!1ses-419!2sar!4v1715000000015" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇺🇸</div>
-                <h2><span class="race-number">R19</span>Las Vegas Strip</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Las Vegas</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Las_Vegas_Grand_Prix_layout.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Veloz circuito urbano nocturno que recorre la icónica avenida de los casinos. El frío del desierto complica calentar las gomas.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">6.201 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.3489814421147!2d-115.1663435!3d36.1214352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c4381ca04085%3A0x2f901844b26bb0d5!2sThe%20Las%20Vegas%20Strip!5e0!3m2!1ses-419!2sar!4v1715000000016" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇶🇦</div>
-                <h2><span class="race-number">R20</span>Lusail Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Lusail</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Losail_International_Circuit.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">Trazado permanente rápido e ininterrumpido en medio del desierto. Sus curvas enlazadas de media y alta velocidad exigen un físico impecable.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.419 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.435759164214!2d51.4527778!3d25.4880556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45e39660dc7d29%3A0xc3b5f259744c8037!2sCircuito%20Internacional%20de%20Lusail!5e0!3m2!1ses-419!2sar!4v1715000000017" loading="lazy"></iframe>
-                </div>
-            </div>
-
-            <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇦🇪</div>
-                <h2><span class="race-number">R21</span>Yas Marina Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.8rem;">Abu Dhabi</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Yas_Marina_Circuit_2021.svg" class="circuit-layout">
-                <p style="font-size: 0.85rem; line-height: 1.4; color: #cbd5e1; margin: 10px 0;">El gran cierre del campeonato. Un circuito moderno rodeado por el hotel de lujo y la marina, idóneo para coronar la temporada.</p>
-                <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.281 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.0345181734563!2d54.6047222!3d24.4700000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e4120ec50b8fd%3A0x633e7f6291a5fb7e!2sCircuito%20de+Yas+Marina!5e0!3m2!1ses-419!2sar!4v1715000000018" loading="lazy"></iframe>
-                </div>
-            </div>
-
-        </div>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">🏁 Rapidus Argentinus</span>
+      <span class="logo-sub">El veloz argentino</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Calendario 2026</a>
+      <a href="fangio.html">Juan Manuel Fangio</a>
+      <a href="colapinto.html">Franco Colapinto</a>
+      <a href="f2-f3.html">F2 & F3 Hub</a>
+      <a href="circuitos.html" class="active">Circuitos</a>
     </div>
-</body>
-</html>
+  </nav>
 
-        </div>
+  <div class="container">
+    <div class="card main-card" style="border-left-color: #e30613;">
+      <div class="header">
+        <h1>Guía de Trazados 2026</h1>
+        <p style="color: #a1a1a8; margin-top: 5px;">Las 24 paradas oficiales del campeonato con sus trazados.</p>
+      </div>
     </div>
-</body>
-</html>
+
+    <!-- REJILLA DE CIRCUITOS -->
+    <div class="circuit-grid">
+
+      <div class="calendar-section"><div class="circuit-icon">🇦🇺</div><h2><span class="race-number">R01</span>Albert Park</h2><p>Melbourne</p><img src="img/circuitos/albert_park.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇨🇳</div><h2><span class="race-number">R02</span>Shanghai Circuit</h2><p>Shanghai</p><img src="img/circuitos/shanghai.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇯🇵</div><h2><span class="race-number">R03</span>Suzuka Circuit</h2><p>Suzuka</p><img src="img/circuitos/suzuka.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇺🇸</div><h2><span class="race-number">R04</span>Miami Autodrome</h2><p>Miami Gardens</p><img src="img/circuitos/miami.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇨🇦</div><h2><span class="race-number">R05</span>Gilles Villeneuve</h2><p>Montréal</p><img src="img/circuitos/villeneuve.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇲🇨</div><h2><span class="race-number">R06</span>Monaco</h2><p>Monte Carlo</p><img src="img/circuitos/monaco.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇪🇸</div><h2><span class="race-number">R07</span>Barcelona</h2><p>Barcelona</p><img src="img/circuitos/barcelona.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇦🇹</div><h2><span class="race-number">R08</span>Red Bull Ring</h2><p>Spielberg</p><img src="img/circuitos/red_bull_ring.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇬🇧</div><h2><span class="race-number">R09</span>Silverstone</h2><p>Northamptonshire</p><img src="img/circuitos/silverstone.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇧🇪</div><h2><span class="race-number">R10</span>Spa-Francorchamps</h2><p>Stavelot</p><img src="img/circuitos/spa.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇭🇺</div><h2><span class="race-number">R11</span>Hungaroring</h2><p>Budapest</p><img src="img/circuitos/hungaroring.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇳🇱</div><h2><span class="race-number">R12</span>Zandvoort</h2><p>Zandvoort</p><img src="img/circuitos/zandvoort.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇮🇹</div><h2><span class="race-number">R13</span>Monza</h2><p>Monza</p><img src="img/circuitos/monza.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇦🇿</div><h2><span class="race-number">R14</span>Baku</h2><p>Baku</p><img src="img/circuitos/baku.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇸🇬</div><h2><span class="race-number">R15</span>Marina Bay</h2><p>Marina Bay</p><img src="img/circuitos/marina_bay.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇺🇸</div><h2><span class="race-number">R16</span>COTA</h2><p>Austin</p><img src="img/circuitos/cota.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇲🇽</div><h2><span class="race-number">R17</span>Hermanos Rodríguez</h2><p>Mexico City</p><img src="img/circuitos/hermanos_rodriguez.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇧🇷</div><h2><span class="race-number">R18</span>Interlagos</h2><p>São Paulo</p><img src="img/circuitos/interlagos.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇺🇸</div><h2><span class="race-number">R19</span>Las Vegas</h2><p>Las Vegas</p><img src="img/circuitos/las_vegas.svg" class="circuit-layout"></div>
+      <div class="calendar-section"><div class="circuit-icon">🇸🇦</div><h2><span class="race-number">R20</span>Jeddah Corniche</h2><p>Jeddah</p><img src="img/circuitos/jeddah.svg" class="circuit-layout"></div
