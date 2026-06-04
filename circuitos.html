@@ -6,38 +6,32 @@
     <title>Circuitos 2026 - Rapidus Argentinus</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Contenedor en rejilla para las tarjetas de los circuitos */
         .circuit-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
             margin-top: 20px;
         }
-        
-        /* Imagen del trazado lineal */
         .circuit-layout {
             width: 100%;
-            height: auto;
-            max-height: 180px;
+            height: 140px;
             object-fit: contain;
-            margin: 15px 0;
-            filter: drop-shadow(0px 4px 8px rgba(225, 6, 0, 0.3));
+            margin: 10px 0;
+            filter: drop-shadow(0px 4px 6px rgba(225, 6, 0, 0.25));
         }
-
-        /* Ficha técnica del circuito */
         .tech-specs {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.04);
             border-radius: 6px;
-            padding: 12px;
-            margin: 15px 0;
+            padding: 10px;
+            margin: 12px 0;
             font-size: 0.85rem;
         }
         .spec-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 6px;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-            padding-bottom: 4px;
+            margin-bottom: 5px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+            padding-bottom: 3px;
         }
         .spec-item:last-child {
             border-bottom: none;
@@ -47,14 +41,13 @@
         .spec-label { color: #a1a1a8; }
         .spec-value { color: #fff; font-weight: bold; }
 
-        /* Contenedor responsivo para el mapa de Google Maps */
         .map-container {
             width: 100%;
-            height: 200px;
-            border-radius: 8px;
+            height: 160px;
+            border-radius: 6px;
             overflow: hidden;
             border: 1px solid #2a2a35;
-            margin-top: 15px;
+            margin-top: 10px;
         }
         .map-container iframe {
             width: 100%;
@@ -62,14 +55,20 @@
             border: 0;
             filter: grayscale(100%) invert(92%) contrast(83%);
         }
-        .circuit-icon {
-            font-size: 2.2rem;
-            float: right;
+        .circuit-icon { font-size: 1.8rem; float: right; }
+        .race-number {
+            background: #e30613;
+            color: white;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 5px;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
-    <!-- BARRA DE NAVEGACIÓN -->
     <nav class="navbar">
         <a href="index.html" class="nav-logo">
             <span class="logo-main">🏁 Rapidus Argentinus</span>
@@ -85,158 +84,327 @@
     </nav>
 
     <div class="container">
-        <!-- CABECERA -->
         <div class="card main-card" style="border-left-color: #e30613;">
             <div class="header">
-                <h1>Trazados Interactivos</h1>
-                <p style="color: #a1a1a8; margin-top: 5px;">Explorá las pistas del campeonato actual con telemetría básica y mapas satelitales en tiempo real.</p>
+                <h1>Guía de Trazados 2026</h1>
+                <p style="color: #a1a1a8; margin-top: 5px;">Las 21 paradas oficiales del campeonato analizadas al detalle con mapas interactivos.</p>
             </div>
         </div>
 
-        <!-- REJILLA DE CIRCUITOS -->
         <div class="circuit-grid">
             
-            <!-- AUSTRALIA -->
+            <!-- R01: AUSTRALIA -->
             <div class="calendar-section" style="margin-top: 0;">
                 <div class="circuit-icon">🇦🇺</div>
-                <h2>Albert Park Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.85rem; margin-top: 5px;">Melbourne, Australia</p>
-                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Australia.png" alt="Trazado de Australia" class="circuit-layout">
-                <p style="font-size: 0.9rem; line-height: 1.5;">Un circuito semipermanente veloz y fluido que bordea el lago Albert Park. Sus modificaciones recientes aumentaron los puntos de sobrepaso dramáticamente.</p>
+                <h2><span class="race-number">R01</span>Albert Park</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Melbourne</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Australia.png" class="circuit-layout">
                 <div class="tech-specs">
                     <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.278 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Curvas:</span><span class="spec-value">14</span></div>
                     <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Semipermanente</span></div>
-                    <div class="spec-item"><span class="spec-label">Récord de Vuelta:</span><span class="spec-value">1:19.735 (Leclerc, 2022)</span></div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.106518177579!2d144.9664531!3d-37.8427782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b204663c77%3A0x7d6a54508e68cf0a!2sAlbert%20Park%20Grand%20Prix%20Circuit!5e0!3m2!1ses-419!2sar!4v1715000000000" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.106518177579!2d144.9664531!3d-37.8427782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b204663c77%3A0x7d6a54508e68cf0a!2sAlbert%20Park%20Grand%20Prix%20Circuit!5e0!3m2!1ses-419!2sar!4v1715000000000" loading="lazy"></iframe>
                 </div>
             </div>
 
-            <!-- JAPÓN -->
+            <!-- R02: CHINA -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇨🇳</div>
+                <h2><span class="race-number">R02</span>Shanghai Circuit</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Shanghai</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/China.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.451 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.0204735391307!2d121.2181513!3d31.3366444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b25916053bcba9%3A0x5a18a0ebc7df5d!2sCircuito%20Internacional%20de%20Shangh%C3%A1i!5e0!3m2!1ses-419!2sar!4v1715000000001" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R03: JAPÓN -->
             <div class="calendar-section" style="margin-top: 0;">
                 <div class="circuit-icon">🇯🇵</div>
-                <h2>Suzuka International Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.85rem; margin-top: 5px;">Suzuka, Japón</p>
-                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Japan.png" alt="Trazado de Japón" class="circuit-layout">
-                <p style="font-size: 0.9rem; line-height: 1.5;">El único circuito del calendario con diseño en forma de "8". Es el favorito de los pilotos debido a sus míticas curvas enlazadas "S" y la rapidísima curva 130R.</p>
+                <h2><span class="race-number">R03</span>Suzuka Circuit</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Suzuka</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Japan.png" class="circuit-layout">
                 <div class="tech-specs">
                     <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.807 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Curvas:</span><span class="spec-value">18</span></div>
                     <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                    <div class="spec-item"><span class="spec-label">Récord de Vuelta:</span><span class="spec-value">1:30.983 (Hamilton, 2019)</span></div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.435747684065!2d136.5385614!3d34.8444444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003923a1a679469%3A0x6968d90fa63b2f8a!2sCircuito%20de%20Suzuka!5e0!3m2!1ses-419!2sar!4v1715000000001" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.435747684065!2d136.5385614!3d34.8444444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6003923a1a679469%3A0x6968d90fa63b2f8a!2sCircuito%20de%20Suzuka!5e0!3m2!1ses-419!2sar!4v1715000000002" loading="lazy"></iframe>
                 </div>
             </div>
 
-            <!-- MIAMI -->
+            <!-- R04: MIAMI -->
             <div class="calendar-section" style="margin-top: 0;">
                 <div class="circuit-icon">🇺🇸</div>
-                <h2>Miami International Autodrome</h2>
-                <p style="color: #a1a1a8; font-size: 0.85rem; margin-top: 5px;">Miami, Estados Unidos</p>
-                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Miami.png" alt="Trazado de Miami" class="circuit-layout">
-                <p style="font-size: 0.9rem; line-height: 1.5;">Desarrollado alrededor del Hard Rock Stadium. Cuenta con un diseño urbano que combina rectas masivas con un complejo técnico de curvas lentas muy cerrado.</p>
+                <h2><span class="race-number">R04</span>Miami Autodrome</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Miami Gardens</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Miami.png" class="circuit-layout">
                 <div class="tech-specs">
                     <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.412 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Curvas:</span><span class="spec-value">19</span></div>
                     <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
-                    <div class="spec-item"><span class="spec-label">Récord de Vuelta:</span><span class="spec-value">1:29.708 (Verstappen, 2023)</span></div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.347318712217!2d-80.2413112!3d25.9536978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b1db1eb40539%3A0x44d32906b3a9856f!2sHard%20Rock%20Stadium!5e0!3m2!1ses-419!2sar!4v1715000000002" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3586.347318712217!2d-80.2413112!3d25.9536978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b1db1eb40539%3A0x44d32906b3a9856f!2sHard%20Rock%20Stadium!5e0!3m2!1ses-419!2sar!4v1715000000003" loading="lazy"></iframe>
                 </div>
             </div>
 
-            <!-- MÓNACO -->
+            <!-- R05: CANADÁ -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇨🇦</div>
+                <h2><span class="race-number">R05</span>Gilles Villeneuve</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Montréal</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Canada.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.361 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Semipermanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.133221379435!2d-73.5250493!3d45.5033092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91b9db1a4dbe1%3A0xbdfe1030e5cd2d69!2sCircuito%20Gilles%20Villeneuve!5e0!3m2!1ses-419!2sar!4v1715000000004" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R06: MÓNACO -->
             <div class="calendar-section" style="margin-top: 0;">
                 <div class="circuit-icon">🇲🇨</div>
-                <h2>Circuito de Mónaco</h2>
-                <p style="color: #a1a1a8; font-size: 0.85rem; margin-top: 5px;">Montecarlo, Mónaco</p>
-                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Monaco.png" alt="Trazado de Mónaco" class="circuit-layout">
-                <p style="font-size: 0.9rem; line-height: 1.5;">El circuito urbano definitivo. Un desafío implacable entre guardarraíles donde adelantar es casi imposible y la clasificación del sábado define el fin de semana.</p>
+                <h2><span class="race-number">R06</span>Circuit de Monaco</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Monte Carlo</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Monaco.png" class="circuit-layout">
                 <div class="tech-specs">
                     <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">3.337 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Curvas:</span><span class="spec-value">19</span></div>
                     <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
-                    <div class="spec-item"><span class="spec-label">Récord de Vuelta:</span><span class="spec-value">1:12.909 (Hamilton, 2021)</span></div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.0963073289056!2d7.420235312351221!3d43.73977534741366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cda043b817fa99%3A0x296cf9b8be449df!2sCircuito%20de%20M%C3%B3naco!5e0!3m2!1ses-419!2sar!4v1710000000000" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.0963073289056!2d7.420235312351221!3d43.73977534741366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cda043b817fa99%3A0x296cf9b8be449df!2sCircuito%20de%20M%C3%B3naco!5e0!3m2!1ses-419!2sar!4v1710000000000" loading="lazy"></iframe>
                 </div>
             </div>
 
-            <!-- REINO UNIDO -->
+            <!-- R07: ESPAÑA -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇪🇸</div>
+                <h2><span class="race-number">R07</span>Circuit de Barcelona</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Barcelona</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Spain.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.657 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.770956965171!2d2.2586111!3d41.5700000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4be605380b2a7%3A0x956041ec18357f8!2sCircuito%20de%20Barcelona-Catalu%C3%B1a!5e0!3m2!1ses-419!2sar!4v1715000000005" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R08: AUSTRIA -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇦🇹</div>
+                <h2><span class="race-number">R08</span>Red Bull Ring</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Spielberg</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Austria.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.318 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.125917833519!2d14.7625!3d47.2197222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4771be57d23f39cf%3A0xbbf0ff357bc8ff8b!2sRed%20Bull%20Ring!5e0!3m2!1ses-419!2sar!4v1715000000006" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R09: REINO UNIDO -->
             <div class="calendar-section" style="margin-top: 0;">
                 <div class="circuit-icon">🇬🇧</div>
-                <h2>Silverstone Circuit</h2>
-                <p style="color: #a1a1a8; font-size: 0.85rem; margin-top: 5px;">Northamptonshire, Reino Unido</p>
-                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Great_Britain.png" alt="Trazado de Silverstone" class="circuit-layout">
-                <p style="font-size: 0.9rem; line-height: 1.5;">La cuna histórica de la F1. Destaca por tramos legendarios de altísima velocidad como Maggots, Becketts y Chapel, poniendo a prueba el cuello de los pilotos.</p>
+                <h2><span class="race-number">R09</span>Silverstone Circuit</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Northamptonshire</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Great_Britain.png" class="circuit-layout">
                 <div class="tech-specs">
                     <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.891 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Curvas:</span><span class="spec-value">18</span></div>
                     <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                    <div class="spec-item"><span class="spec-label">Récord de Vuelta:</span><span class="spec-value">1:27.097 (Verstappen, 2020)</span></div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.331580879899!2d-1.0182436!3d52.073302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877239326bbfaff%3A0x6fb52084c07fc738!2sCircuito%20de%20Silverstone!5e0!3m2!1ses-419!2sar!4v1715000000003" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2444.331580879899!2d-1.0182436!3d52.073302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4877239326bbfaff%3A0x6fb52084c07fc738!2sCircuito%20de%20Silverstone!5e0!3m2!1ses-419!2sar!4v1715000000007" loading="lazy"></iframe>
                 </div>
             </div>
 
-            <!-- BELGICA -->
+            <!-- R10: BÉLGICA -->
             <div class="calendar-section" style="margin-top: 0;">
                 <div class="circuit-icon">🇧🇪</div>
-                <h2>Circuit de Spa-Francorchamps</h2>
-                <p style="color: #a1a1a8; font-size: 0.85rem; margin-top: 5px;">Stavelot, Bélgica</p>
-                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Belgium.png" alt="Trazado de Spa" class="circuit-layout">
-                <p style="font-size: 0.9rem; line-height: 1.5;">El trazado más largo de la temporada. Famoso mundialmente por su compresión extrema en la mítica subida ciega de "Eau Rouge - Raidillon" y su clima cambiante.</p>
+                <h2><span class="race-number">R10</span>Spa-Francorchamps</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Stavelot</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Belgium.png" class="circuit-layout">
                 <div class="tech-specs">
                     <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">7.004 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Curvas:</span><span class="spec-value">19</span></div>
                     <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                    <div class="spec-item"><span class="spec-label">Récord de Vuelta:</span><span class="spec-value">1:46.286 (Bottas, 2018)</span></div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.114144365851!2d5.9691353!3d50.4435833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0611e05d95955%3A0xe9882260492160d2!2sCircuito%20de%20Spa-Francorchamps!5e0!3m2!1ses-419!2sar!4v1715000000004" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2537.114144365851!2d5.9691353!3d50.4435833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0611e05d95955%3A0xe9882260492160d2!2sCircuito%20de%20Spa-Francorchamps!5e0!3m2!1ses-419!2sar!4v1715000000008" loading="lazy"></iframe>
                 </div>
             </div>
 
-            <!-- MONZA -->
+            <!-- R11: HUNGRÍA -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇭🇺</div>
+                <h2><span class="race-number">R11</span>Hungaroring</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Budapest</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Hungary.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.381 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2691.077259160565!2d19.2485116!3d47.5830219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741bc6da68a3e0b%3A0xa59f77f7223049b6!2sHungaroring!5e0!3m2!1ses-419!2sar!4v1715000000009" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R12: PAÍSES BAJOS -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇳🇱</div>
+                <h2><span class="race-number">R12</span>Circuit Zandvoort</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Zandvoort</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Netherlands.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.259 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.5390098939634!2d4.5392296!3d52.3862592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5ec19e7cf45c5%3A0x6009852be8374d8d!2sCircuito%20de%20Zandvoort!5e0!3m2!1ses-419!2sar!4v1715000000010" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R13: ITALIA -->
             <div class="calendar-section" style="margin-top: 0;">
                 <div class="circuit-icon">🇮🇹</div>
-                <h2>Autodromo Nazionale Monza</h2>
-                <p style="color: #a1a1a8; font-size: 0.85rem; margin-top: 5px;">Monza, Italia</p>
-                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Italy.png" alt="Trazado de Monza" class="circuit-layout">
-                <p style="font-size: 0.9rem; line-height: 1.5;">Llamado "El Templo de la Velocidad". Cuenta con largas rectas e icónicas variantes como la Parabólica (Curva Alboreto) que exigen configuraciones de carga aerodinámica mínima.</p>
+                <h2><span class="race-number">R13</span>Autodromo de Monza</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Monza</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Italy.png" class="circuit-layout">
                 <div class="tech-specs">
                     <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.793 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Curvas:</span><span class="spec-value">11</span></div>
                     <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                    <div class="spec-item"><span class="spec-label">Récord de Vuelta:</span><span class="spec-value">1:21.046 (Barrichello, 2004)</span></div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.3150821639965!2d9.278571012431718!3d45.62030062334812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786b85cb15945db%3A0x6bda194f13da3a!2sAutodromo%20Nazionale%20Monza!5e0!3m2!1ses-419!2sar!4v1710000000000" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2790.3150821639965!2d9.278571012431718!3d45.62030062334812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786b85cb15945db%3A0x6bda194f13da3a!2sAutodromo%20Nazionale%20Monza!5e0!3m2!1ses-419!2sar!4v1710000000000" loading="lazy"></iframe>
                 </div>
             </div>
 
-            <!-- BRASIL -->
+            <!-- R14: AZERBAIANCE -->
             <div class="calendar-section" style="margin-top: 0;">
-                <div class="circuit-icon">🇧🇷</div>
-                <h2>Autódromo de Interlagos</h2>
-                <p style="color: #a1a1a8; font-size: 0.85rem; margin-top: 5px;">São Paulo, Brasil</p>
-                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Brazil.png" alt="Trazado de Interlagos" class="circuit-layout">
-                <p style="font-size: 0.9rem; line-height: 1.5;">Un clásico sudamericano que corre en sentido antihorario. Sus desniveles pronunciados, la famosa "S de Senna" y su clima impredecible garantizan carreras caóticas.</p>
+                <div class="circuit-icon">🇦🇿</div>
+                <h2><span class="race-number">R14</span>Baku City Circuit</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Baku</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Azerbaijan.png" class="circuit-layout">
                 <div class="tech-specs">
-                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.309 km</span></div>
-                    <div class="spec-item"><span class="spec-label">Curvas:</span><span class="spec-value">15</span></div>
-                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
-                    <div class="spec-item"><span class="spec-label">Récord de Vuelta:</span><span class="spec-value">1:10.540 (Bottas, 2018)</span></div>
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">6.003 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
                 </div>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.647313861211!2d-46.6994112!3d-23.7011111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4fbc6bb59ed7%3A0x2db4e805545fbc5f!2sAut%C3%B3dromo%20Jos%C3%A9%20Carlos%20Pace!5e0!3m2!1ses-419!2sar!4v1715000000005" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.3853112876113!2d49.8519999!3d40.378036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d6bd3ba5411%3A0x7bfa006322b27077!2sCircuito%20de%20Carreras%20de%20Bak%C3%BA!5e0!3m2!1ses-419!2sar!4v1715000000011" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R15: SINGAPUR -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇸🇬</div>
+                <h2><span class="race-number">R15</span>Marina Bay Circuit</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Marina Bay</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Singapore.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.940 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8188185994246!2d103.8584869!3d1.2825442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19abbb40bfeb%3A0xa64b8bb896e05d04!2sCircuito%20callejero+de+Marina+Bay!5e0!3m2!1ses-419!2sar!4v1715000000012" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R16: ESTADOS UNIDOS -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇺🇸</div>
+                <h2><span class="race-number">R16</span>Circuit of the Americas</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Austin</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/USA.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.513 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.7820468305364!2d-97.6358824!3d30.1328056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b1da98b9dc1d%3A0x6e2f1e29e00ec773!2sCircuito%20de%20las%20Am%C3%A9ricas!5e0!3m2!1ses-419!2sar!4v1715000000013" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R17: MÉXICO -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇲🇽</div>
+                <h2><span class="race-number">R17</span>Hermanos Rodríguez</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Mexico City</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Mexico.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.304 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8837267156942!2d-99.0911762!3d19.4044955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fc1e2f7bf28b%3A0xda206f407b7b1346!2sAut%C3%B3dromo%20Hermanos%20Rodr%C3%ADguez!5e0!3m2!1ses-419!2sar!4v1715000000014" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R18: SÃO PAULO -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇧🇷</div>
+                <h2><span class="race-number">R18</span>Interlagos Circuit</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">São Paulo</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Brazil.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">4.309 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.647313861211!2d-46.6994112!3d-23.7011111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4fbc6bb59ed7%3A0x2db4e805545fbc5f!2sAut%C3%B3dromo%20Jos%C3%A9%20Carlos%20Pace!5e0!3m2!1ses-419!2sar!4v1715000000015" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R19: LAS VEGAS -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇺🇸</div>
+                <h2><span class="race-number">R19</span>Las Vegas Strip</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Las Vegas</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Las_Vegas.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">6.201 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #ffb703;">Urbano</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.3489814421147!2d-115.1663435!3d36.1214352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c4381ca04085%3A0x2f901844b26bb0d5!2sThe%20Las%20Vegas%20Strip!5e0!3m2!1ses-419!2sar!4v1715000000016" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R20: QATAR -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇶🇦</div>
+                <h2><span class="race-number">R20</span>Lusail Circuit</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Lusail</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Qatar.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.419 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.435759164214!2d51.4527778!3d25.4880556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45e39660dc7d29%3A0xc3b5f259744c8037!2sCircuito%20Internacional%20de%20Lusail!5e0!3m2!1ses-419!2sar!4v1715000000017" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <!-- R21: ABU DHABI -->
+            <div class="calendar-section" style="margin-top: 0;">
+                <div class="circuit-icon">🇦🇪</div>
+                <h2><span class="race-number">R21</span>Yas Marina Circuit</h2>
+                <p style="color: #a1a1a8; font-size: 0.8rem;">Abu Dhabi</p>
+                <img src="https://media.formula1.com/image/upload/f_auto,q_auto/content/dam/fom-website/2018-redesign-assets/circuit-maps/16x9/Abu_Dhabi.png" class="circuit-layout">
+                <div class="tech-specs">
+                    <div class="spec-item"><span class="spec-label">Longitud:</span><span class="spec-value">5.281 km</span></div>
+                    <div class="spec-item"><span class="spec-label">Tipo:</span><span class="spec-value" style="color: #2a9d8f;">Permanente</span></div>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.0345181734563!2d54.6047222!3d24.4700000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e4120ec50b8fd%3A0x633e7f6291a5fb7e!2sCircuito%20de+Yas+Marina!5e0!3m2!1ses-419!2sar!4v1715000000018" loading="lazy"></iframe>
                 </div>
             </div>
 
