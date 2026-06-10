@@ -12,43 +12,48 @@ print("🏎 Conectando con los servidores oficiales de la F1...")
 # Le pedimos a FastF1 el calendario de la temporada 2026
 calendario = fastf1.get_event_schedule(2026, include_testing=False)
 
-# Obtenemos la fecha y hora actual EN UTC
-hoy = datetime.now(timezone.utc)
+# Obtenemos la fecha actual EN UTC pura
+ahora_utc = datetime.now(timezone.utc)
 
 # 1. Armamos la lista de TODO el calendario
 lista_calendario = []
 for idx, carrera in calendario.iterrows():
     fecha_dt = carrera['Session5Date']
     
-    # Esto guarda la fecha en un formato internacional limpio que JS entiende al toque
+    # Formato ISO para JavaScript
     fecha_iso = fecha_dt.strftime('%Y-%m-%dT%H:%M:%SZ') if hasattr(fecha_dt, 'strftime') else None
 
-    # Verificamos si la carrera ya pasó comparando de forma segura
-    ya_paso_resultado = bool(fecha_dt.tz_localize('UTC') < hoy) if hasattr(fecha_dt, 'tz_localize') else False
+    # Forzamos a que la fecha de la carrera tenga zona horaria UTC para comparar de forma segura
+    if hasattr(fecha_dt, 'tzinfo') and fecha_dt.tzinfo is not None:
+        fecha_carrera_utc = fecha_dt.astimezone(timezone.utc)
+    else:
+        fecha_carrera_utc = fecha_dt.replace(tzinfo=timezone.utc)
+
+    # Ahora ambas son offset-aware en UTC. Comparación 100% segura.
+    ya_paso_resultado = bool(fecha_carrera_utc < ahora_utc)
 
     lista_calendario.append({
         "ronda": int(carrera['RoundNumber']),
         "nombre_gran_premio": str(carrera['EventName']),
         "pais": str(carrera['Country']),
         "ubicacion": str(carrera['Location']),
-        "fecha_iso": fecha_iso,        # <-- Agregamos esto
-        "ya_paso": ya_paso_resultado   # <-- Arreglamos el bug de las pasadas
-    }
+        "fecha_iso": fecha_iso,
+        "ya_paso": ya_paso_resultado
+    })
 
 # 2. Buscamos la próxima carrera (la primera futura)
-carreras_futuras = calendario[calendario['Session5Date'] > hoy]
 datos_proxima = None
+for elemento in lista_calendario:
+    if not elemento["ya_paso"]:
+        datos_proxima = {
+            "nombre_gran_premio": elemento["nombre_gran_premio"],
+            "pais": elemento["pais"],
+            "ronda": elemento["ronda"],
+            "fecha_iso": elemento["fecha_iso"]
+        }
+        break  # Frenamos en la primera que encontremos que NO haya pasado
 
-if not carreras_futuras.empty:
-    proxima_carrera = carreras_futuras.iloc[0]
-    datos_proxima = {
-        "nombre_gran_premio": str(proxima_carrera['EventName']),
-        "pais": str(proxima_carrera['Country']),
-        "ronda": int(proxima_carrera['RoundNumber']),
-        "fecha_iso": proxima_carrera['Session5Date'].strftime('%Y-%m-%dT%H:%M:%SZ') # <-- Cambiado a ISO
-    }
-
-# 3. Estructura final con datos agrupados
+# 3. Estructura final
 f1_datos_completos = {
     "proxima_carrera": datos_proxima,
     "calendario_completo": lista_calendario
