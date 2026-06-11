@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rapidus Argentinus - F1 Hub</title>
+  <title>Circuitos F1 2026 - Rapidus Argentinus</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .gallery-grid {
@@ -46,68 +46,48 @@
 <body>
   <!-- NAVBAR -->
   <nav class="navbar">
-    <a href="#calendario" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <span class="logo-main">🏁 Rapidus Argentinus</span>
       <span class="logo-sub">El veloz argentino</span>
     </a>
     <div class="nav-links">
-      <a href="#calendario" class="active">Calendario 2026</a>
+      <a href="index.html">Calendario 2026</a>
       <a href="fangio.html">Juan Manuel Fangio</a>
       <a href="colapinto.html">Franco Colapinto</a>
       <a href="f2-f3.html">F2 & F3 Hub</a>
-      <a href="#circuitos">Circuitos</a>
+      <a href="#circuitos" class="active">Circuitos</a>
     </div>
   </nav>
-
-  <!-- SECCIÓN CALENDARIO -->
-  <section id="calendario" class="container">
-    <div class="card main-card">
-      <div class="header">
-        <span class="live-badge">PRÓXIMO EVENTO</span>
-        <h1 id="gran-premio">Spanish Grand Prix 🇪🇸</h1>
-      </div>
-      <div class="content">
-        <div class="info-group">
-          <span class="label">País</span>
-          <p class="value">España</p>
-        </div>
-        <div class="info-group">
-          <span class="label">Ronda</span>
-          <p class="value">R07</p>
-        </div>
-        <div class="info-group">
-          <span class="label">Fecha</span>
-          <p class="value">14/06/2026</p>
-        </div>
-        <div class="info-group">
-          <span class="label">Hora (Argentina)</span>
-          <p class="value">10:00 hs</p>
-        </div>
-      </div>
-      <!-- Contador regresivo -->
-      <div id="countdown" style="margin-top:15px; font-weight:bold; color:#74acdf;"></div>
-    </div>
-
-    <div class="calendar-section">
-      <h2>Calendario Completo 2026</h2>
-      <div id="calendario-lista" class="calendar-grid">
-        <!-- Aquí se insertarán las carreras desde datos.json -->
-      </div>
-    </div>
-  </section>
 
   <!-- SECCIÓN GALERÍA DE CIRCUITOS -->
   <section id="circuitos" class="container">
     <div class="calendar-section">
-      <h2>Galería de Circuitos</h2>
+      <h2>Galería de Circuitos F1 2026</h2>
       <div class="gallery-grid">
         <img src="img/circuitos/albert_park.svg" alt="Albert Park" class="circuit-thumb">
-        <img src="img/circuitos/monza.svg" alt="Monza" class="circuit-thumb">
-        <img src="img/circuitos/yas_marina.svg" alt="Yas Marina" class="circuit-thumb">
-        <img src="img/circuitos/spa.svg" alt="Spa-Francorchamps" class="circuit-thumb">
-        <img src="img/circuitos/silverstone.svg" alt="Silverstone" class="circuit-thumb">
+        <img src="img/circuitos/jeddah.svg" alt="Jeddah Corniche" class="circuit-thumb">
         <img src="img/circuitos/suzuka.svg" alt="Suzuka" class="circuit-thumb">
-        <!-- Agregá aquí las demás miniaturas de tu carpeta img/circuitos -->
+        <img src="img/circuitos/shanghai.svg" alt="Shanghai" class="circuit-thumb">
+        <img src="img/circuitos/imola.svg" alt="Imola" class="circuit-thumb">
+        <img src="img/circuitos/monaco.svg" alt="Monaco" class="circuit-thumb">
+        <img src="img/circuitos/barcelona.svg" alt="Barcelona" class="circuit-thumb">
+        <img src="img/circuitos/montreal.svg" alt="Montreal" class="circuit-thumb">
+        <img src="img/circuitos/spielberg.svg" alt="Spielberg" class="circuit-thumb">
+        <img src="img/circuitos/silverstone.svg" alt="Silverstone" class="circuit-thumb">
+        <img src="img/circuitos/budapest.svg" alt="Budapest" class="circuit-thumb">
+        <img src="img/circuitos/spa.svg" alt="Spa-Francorchamps" class="circuit-thumb">
+        <img src="img/circuitos/zandvoort.svg" alt="Zandvoort" class="circuit-thumb">
+        <img src="img/circuitos/monza.svg" alt="Monza" class="circuit-thumb">
+        <img src="img/circuitos/baku.svg" alt="Bakú" class="circuit-thumb">
+        <img src="img/circuitos/singapore.svg" alt="Singapur" class="circuit-thumb">
+        <img src="img/circuitos/austin.svg" alt="Austin" class="circuit-thumb">
+        <img src="img/circuitos/mexico.svg" alt="México" class="circuit-thumb">
+        <img src="img/circuitos/interlagos.svg" alt="Interlagos" class="circuit-thumb">
+        <img src="img/circuitos/las_vegas.svg" alt="Las Vegas" class="circuit-thumb">
+        <img src="img/circuitos/lusail.svg" alt="Lusail" class="circuit-thumb">
+        <img src="img/circuitos/yas_marina.svg" alt="Yas Marina" class="circuit-thumb">
+        <img src="img/circuitos/kyalami.svg" alt="Kyalami" class="circuit-thumb">
+        <img src="img/circuitos/london_excel.svg" alt="London ExCeL" class="circuit-thumb">
       </div>
     </div>
   </section>
@@ -115,29 +95,6 @@
   <!-- Scripts -->
   <script src="script.js"></script>
   <script>
-    // Cuenta regresiva
-    fetch("datos.json")
-      .then(res => res.json())
-      .then(data => {
-        const proxima = data.races.find(r => r.status === "Próximamente");
-        if (!proxima) return;
-        const fechaCarrera = new Date(proxima.date);
-        const countdown = document.getElementById("countdown");
-
-        setInterval(() => {
-          const ahora = new Date();
-          const diff = fechaCarrera - ahora;
-          if (diff <= 0) {
-            countdown.textContent = "¡La carrera ya comenzó!";
-            return;
-          }
-          const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-          const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-          const minutos = Math.floor((diff / (1000 * 60)) % 60);
-          countdown.textContent = `Faltan ${dias} días, ${horas}h ${minutos}m`;
-        }, 1000);
-      });
-
     // Modal interactivo para circuitos
     const thumbs = document.querySelectorAll(".circuit-thumb");
     thumbs.forEach(img => {

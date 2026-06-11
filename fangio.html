@@ -1,112 +1,138 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Manuel Fangio - F1 Hub</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Manuel Fangio - F1 Hub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="navbar">
-       <a href="index.html" class="nav-logo">
-           <span class="logo-main">🏁 Rapidus Argentinus</span>
-           <span class="logo-sub">El veloz argentino</span>
-       </a>
-       <div class="nav-links">
-           <a href="index.html">Calendario 2026</a>
-           <a href="fangio.html" class="active">Juan Manuel Fangio</a>
-           <a href="colapinto.html">Franco Colapinto</a>
-       </div>
-   </nav>
-
-    <div class="container">
-        <!-- SECCIÓN PRINCIPAL: PERFIL -->
-        <div class="card main-card">
-            <div class="header">
-                <span class="live-badge" style="background-color: #00875a;">LEYENDA HISTÓRICA</span>
-                <h1>Juan Manuel Fangio</h1>
-                <p style="color: #a1a1a8; font-style: italic; margin-top: 5px;">"El Chueco" / "El Maestro"</p>
-            </div>
-            
-            <div class="content">
-                <div class="info-group">
-                    <span class="label">Nacimiento</span>
-                    <p class="value">24/06/1911 (Balcarce, Arg)</p>
-                </div>
-                <div class="info-group">
-                    <span class="label">Títulos Mundiales</span>
-                    <p class="value" style="color: #ffd700; font-weight: bold;">5 (1951, 1954, 1955, 1956, 1957)</p>
-                </div>
-                <div class="info-group">
-                    <span class="label">Efectividad</span>
-                    <p class="value">47.06% (Récord histórico)</p>
-                </div>
-                <div class="info-group">
-                    <span class="label">Escuderías Campeonas</span>
-                    <p class="value">Alfa Romeo, Maserati, Mercedes, Ferrari</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECCIÓN: ESTADÍSTICAS DETALLADAS -->
-        <div class="calendar-section">
-            <h2>Estadísticas en Fórmula 1</h2>
-            <div class="calendar-grid">
-                
-                <div class="race-strip" style="border-left-color: #00875a;">
-                    <div class="race-info">
-                        <span class="race-round" style="color: #00875a;">51</span>
-                        <div class="race-details">
-                            <h3>Grandes Premios Largados</h3>
-                            <p>Una carrera deportiva corta pero letal en la década de los 50.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="race-strip" style="border-left-color: #00875a;">
-                    <div class="race-info">
-                        <span class="race-round" style="color: #00875a;">24</span>
-                        <div class="race-details">
-                            <h3>Victorias</h3>
-                            <p>Ganó casi la mitad de las carreras que disputó formalmente.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="race-strip" style="border-left-color: #00875a;">
-                    <div class="race-info">
-                        <span class="race-round" style="color: #00875a;">29</span>
-                        <div class="race-details">
-                            <h3>Pole Positions</h3>
-                            <p>Dominaba los sábados de clasificación con un ritmo implacable.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="race-strip" style="border-left-color: #00875a;">
-                    <div class="race-info">
-                        <span class="race-round" style="color: #00875a;">35</span>
-                        <div class="race-details">
-                            <h3>Podios obtenidos</h3>
-                            <p>Su regularidad lo mantenía casi siempre celebrando al final del GP.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- SECCIÓN RESEÑA -->
-        <div class="calendar-section" style="color: #fff; line-height: 1.6;">
-            <h2>Su Legado</h2>
-            <p style="color: #a1a1a8; font-size: 0.95rem; margin-bottom: 15px;">
-                Juan Manuel Fangio es considerado por muchos expertos como el mejor piloto de todos los tiempos. Mantuvo el récord de más campeonatos mundiales (5) durante casi medio siglo hasta que fue superado por Michael Schumacher. 
-            </p>
-            <p style="color: #a1a1a8; font-size: 0.95rem;">
-                Sigue siendo el único piloto en la historia de la Fórmula 1 que logró coronarse campeón del mundo con cuatro escuderías distintas, demostrando que su talento estaba por encima del rendimiento de cualquier auto.
-            </p>
-        </div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">🏁 Rapidus Argentinus</span>
+      <span class="logo-sub">El veloz argentino</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Calendario 2026</a>
+      <a href="#fangio" class="active">Juan Manuel Fangio</a>
+      <a href="colapinto.html">Franco Colapinto</a>
+      <a href="f2-f3.html">F2 & F3 Hub</a>
     </div>
+  </nav>
+
+  <!-- SECCIÓN FANGIO -->
+  <section id="fangio" class="container">
+    <div class="card main-card">
+      <div class="header">
+        <span class="live-badge" style="background-color: #00875a;">LEYENDA HISTÓRICA</span>
+        <h1>Juan Manuel Fangio</h1>
+        <p style="color: #a1a1a8; font-style: italic;">"El Chueco" / "El Maestro"</p>
+      </div>
+      <div class="content">
+        <div class="info-group">
+          <span class="label">Nacimiento</span>
+          <p class="value">24/06/1911 (Balcarce, Arg)</p>
+        </div>
+        <div class="info-group">
+          <span class="label">Títulos Mundiales</span>
+          <p id="contador-titulos" class="value" style="color: #ffd700; font-weight: bold;">0</p>
+        </div>
+        <div class="info-group">
+          <span class="label">Efectividad</span>
+          <p class="value">47.06% (Récord histórico)</p>
+        </div>
+        <div class="info-group">
+          <span class="label">Escuderías Campeonas</span>
+          <p class="value">Alfa Romeo, Maserati, Mercedes, Ferrari</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESTADÍSTICAS -->
+    <div class="calendar-section">
+      <h2>Estadísticas en Fórmula 1</h2>
+      <div class="calendar-grid">
+        <div class="race-strip" style="border-left-color: #00875a;">
+          <div class="race-info">
+            <span class="race-round" style="color: #00875a;">51</span>
+            <div class="race-details">
+              <h3>Grandes Premios Largados</h3>
+              <p>Una carrera deportiva corta pero letal en la década de los 50.</p>
+            </div>
+          </div>
+        </div>
+        <div class="race-strip" style="border-left-color: #00875a;">
+          <div class="race-info">
+            <span class="race-round" style="color: #00875a;">24</span>
+            <div class="race-details">
+              <h3>Victorias</h3>
+              <p>Ganó casi la mitad de las carreras que disputó formalmente.</p>
+            </div>
+          </div>
+        </div>
+        <div class="race-strip" style="border-left-color: #00875a;">
+          <div class="race-info">
+            <span class="race-round" style="color: #00875a;">29</span>
+            <div class="race-details">
+              <h3>Pole Positions</h3>
+              <p>Dominaba los sábados de clasificación con un ritmo implacable.</p>
+            </div>
+          </div>
+        </div>
+        <div class="race-strip" style="border-left-color: #00875a;">
+          <div class="race-info">
+            <span class="race-round" style="color: #00875a;">35</span>
+            <div class="race-details">
+              <h3>Podios obtenidos</h3>
+              <p>Su regularidad lo mantenía casi siempre celebrando al final del GP.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEGADO -->
+    <div class="calendar-section" style="color: #fff; line-height: 1.6;">
+      <h2>Su Legado</h2>
+      <p style="color: #a1a1a8; font-size: 0.95rem; margin-bottom: 15px;">
+        Juan Manuel Fangio es considerado por muchos expertos como el mejor piloto de todos los tiempos. Mantuvo el récord de más campeonatos mundiales (5) durante casi medio siglo hasta que fue superado por Michael Schumacher.
+      </p>
+      <p style="color: #a1a1a8; font-size: 0.95rem;">
+        Sigue siendo el único piloto en la historia de la Fórmula 1 que logró coronarse campeón del mundo con cuatro escuderías distintas, demostrando que su talento estaba por encima del rendimiento de cualquier auto.
+      </p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Animación contador de títulos
+    let titulos = 0;
+    const total = 5;
+    const contador = document.getElementById("contador-titulos");
+    const intervalo = setInterval(() => {
+      titulos++;
+      contador.textContent = titulos;
+      if (titulos === total) clearInterval(intervalo);
+    }, 500);
+  </script>
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2026 Rapidus Argentinus | Proyecto web temático de Fórmula 1</p>
+    <p>
+      Hecho con ❤️ en Argentina — 
+      <a href="https://rapidusfluminisargentei.github.io/f1-web/" target="_blank">Sitio oficial</a>
+    </p>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a> |
+      <a href="fangio.html">Fangio</a> |
+      <a href="colapinto.html">Colapinto</a> |
+      <a href="f2-f3.html">F2 & F3</a> |
+      <a href="circuitos.html">Circuitos</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

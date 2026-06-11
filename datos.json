@@ -1,0 +1,172 @@
+{
+  "races": [
+    {
+      "round": "R01",
+      "name": "Australian Grand Prix",
+      "location": "Melbourne, Australia",
+      "date": "2026-03-08T15:00:00-03:00",
+      "status": "Finalizado"
+    },
+    {
+      "round": "R02",
+      "name": "Saudi Arabian Grand Prix",
+      "location": "Jeddah, Arabia Saudita",
+      "date": "2026-03-22T20:00:00+03:00",
+      "status": "Finalizado"
+    },
+    {
+      "round": "R03",
+      "name": "Japanese Grand Prix",
+      "location": "Suzuka, Japón",
+      "date": "2026-04-05T14:00:00+09:00",
+      "status": "Finalizado"
+    },
+    {
+      "round": "R04",
+      "name": "Chinese Grand Prix",
+      "location": "Shanghai, China",
+      "date": "2026-04-19T15:00:00+08:00",
+      "status": "Finalizado"
+    },
+    {
+      "round": "R05",
+      "name": "Emilia Romagna Grand Prix",
+      "location": "Imola, Italia",
+      "date": "2026-05-17T13:00:00+02:00",
+      "status": "Finalizado"
+    },
+    {
+      "round": "R06",
+      "name": "Monaco Grand Prix",
+      "location": "Monte Carlo, Mónaco",
+      "date": "2026-06-07T15:00:00+02:00",
+      "status": "Finalizado"
+    },
+    {
+      "round": "R07",
+      "name": "Spanish Grand Prix",
+      "location": "Barcelona, España",
+      "date": "2026-06-14T15:00:00+02:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R08",
+      "name": "Canadian Grand Prix",
+      "location": "Montréal, Canadá",
+      "date": "2026-06-28T16:00:00-04:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R09",
+      "name": "Austrian Grand Prix",
+      "location": "Spielberg, Austria",
+      "date": "2026-07-05T15:00:00+02:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R10",
+      "name": "British Grand Prix",
+      "location": "Silverstone, Reino Unido",
+      "date": "2026-07-19T15:00:00+01:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R11",
+      "name": "Hungarian Grand Prix",
+      "location": "Budapest, Hungría",
+      "date": "2026-08-02T15:00:00+02:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R12",
+      "name": "Belgian Grand Prix",
+      "location": "Spa-Francorchamps, Bélgica",
+      "date": "2026-08-16T15:00:00+02:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R13",
+      "name": "Dutch Grand Prix",
+      "location": "Zandvoort, Países Bajos",
+      "date": "2026-08-30T15:00:00+02:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R14",
+      "name": "Italian Grand Prix",
+      "location": "Monza, Italia",
+      "date": "2026-09-06T15:00:00+02:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R15",
+      "name": "Azerbaijan Grand Prix",
+      "location": "Bakú, Azerbaiyán",
+      "date": "2026-09-20T15:00:00+04:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R16",
+      "name": "Singapore Grand Prix",
+      "location": "Singapur",
+      "date": "2026-09-27T20:00:00+08:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R17",
+      "name": "United States Grand Prix",
+      "location": "Austin, Estados Unidos",
+      "date": "2026-10-11T15:00:00-05:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R18",
+      "name": "Mexican Grand Prix",
+      "location": "Ciudad de México, México",
+      "date": "2026-10-25T15:00:00-06:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R19",
+      "name": "Brazilian Grand Prix",
+      "location": "São Paulo, Brasil",
+      "date": "2026-11-08T15:00:00-03:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R20",
+      "name": "Las Vegas Grand Prix",
+      "location": "Las Vegas, Estados Unidos",
+      "date": "2026-11-21T22:00:00-08:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R21",
+      "name": "Qatar Grand Prix",
+      "location": "Lusail, Catar",
+      "date": "2026-11-29T18:00:00+03:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R22",
+      "name": "Abu Dhabi Grand Prix",
+      "location": "Yas Marina, Emiratos Árabes Unidos",
+      "date": "2026-12-06T17:00:00+04:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R23",
+      "name": "South African Grand Prix",
+      "location": "Kyalami, Sudáfrica",
+      "date": "2026-12-13T15:00:00+02:00",
+      "status": "Próximamente"
+    },
+    {
+      "round": "R24",
+      "name": "London Grand Prix (ExCeL)",
+      "location": "Londres, Reino Unido",
+      "date": "2026-12-20T15:00:00+01:00",
+      "status": "Próximamente"
+    }
+  ]
+}

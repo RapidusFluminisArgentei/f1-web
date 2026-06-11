@@ -234,3 +234,28 @@ body {
     color: #a1a1a8;
     background-color: #15151a;
 }
+
+.footer {
+  background: linear-gradient(to right, #74ACDF, #FFFFFF, #74ACDF);
+  color: #15151e;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 50px;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.3);
+}
+
+.footer a {
+  color: #15151e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-links {
+  margin-top: 10px;
+}

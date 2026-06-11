@@ -1,146 +1,141 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>F2 & F3 Hub - Rapidus Argentinus</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Ajustes específicos para identificar las categorías menores */
-        .badge-f2 {
-            background-color: #0072c6; /* Azul característico F2 */
-            color: white;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 4px 8px;
-            border-radius: 4px;
-            letter-spacing: 1px;
-        }
-        .badge-f3 {
-            background-color: #e30613; /* Rojo F3 */
-            color: white;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 4px 8px;
-            border-radius: 4px;
-            letter-spacing: 1px;
-        }
-        .f2-border { border-left-color: #0072c6 !important; }
-        .f3-border { border-left-color: #e30613 !important; }
-        
-        .grid-categorias {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-        .pilotos-list {
-            margin-top: 15px;
-            padding-left: 20px;
-            color: #a1a1a8;
-        }
-        .pilotos-list li {
-            margin-bottom: 8px;
-        }
-        .destacado-arg {
-            color: #74acdf;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F2 & F3 Hub - Rapidus Argentinus</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .badge-f2 {
+      background-color: #0072c6;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+    .badge-f3 {
+      background-color: #e30613;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+    }
+    .expandable {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .expandable:hover {
+      background-color: rgba(116,172,223,0.1);
+    }
+    .extra-info {
+      display: none;
+      margin-top: 10px;
+      color: #a1a1a8;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <!-- BARRA DE NAVEGACIÓN -->
-    <nav class="navbar">
-        <a href="index.html" class="nav-logo">
-            <span class="logo-main">🏁 Rapidus Argentinus</span>
-            <span class="logo-sub">El veloz argentino</span>
-        </a>
-        <div class="nav-links">
-            <a href="index.html">Calendario 2026</a>
-            <a href="fangio.html">Juan Manuel Fangio</a>
-            <a href="colapinto.html">Franco Colapinto</a>
-            <a href="f2-f3.html" class="active">F2 & F3 Hub</a>
-        </div>
-    </nav>
-
-    <div class="container">
-        <!-- INTRODUCCIÓN -->
-        <div class="card main-card" style="border-left-color: #74acdf;">
-            <div class="header">
-                <h1>El Semillero del Automovilismo</h1>
-                <p style="color: #a1a1a8; margin-top: 5px;">Las categorías antesala donde se forjan las futuras leyendas de la Fórmula 1.</p>
-            </div>
-        </div>
-
-        <div class="grid-categorias">
-            <!-- SECCIÓN FIA FÓRMULA 2 -->
-            <div class="calendar-section">
-                <span class="badge-f2">CAMINO A LA GLORIA</span>
-                <h2 style="margin-top: 10px;">FIA Formula 2 Championship</h2>
-                <div class="calendar-grid">
-                    
-                    <!-- Tarjeta de Piloto Argentino Destacado en F2 -->
-                    <div class="race-strip" style="border-left-color: #74acdf; background-color: rgba(116, 172, 223, 0.05);">
-                        <div class="race-info">
-                            <span class="race-round" style="color: #74acdf;">🇦🇷</span>
-                            <div class="race-details">
-                                <h3 class="destacado-arg">Nicolás Martín Varrone</h3>
-                                <p style="color: #fff; font-weight: bold; font-size: 0.8rem; margin-bottom: 4px;">Ingeniero Maschwitz, Escobar (Buenos Aires) | 06/12/2000</p>
-                                <p>El piloto bonaerense defiende la bandera argentina en la antesala directa de la F1, aportando su experiencia internacional al exigente campeonato de Fórmula 2.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="race-strip f2-border">
-                        <div class="race-info">
-                            <span class="race-round" style="color: #0072c6;">F2</span>
-                            <div class="race-details">
-                                <h3>El Escalón Definitivo</h3>
-                                <p>Monoplazas idénticos con motores Mecachrome V6 de 3.4 litros. Aquí la diferencia real la hace el talento del piloto en las pistas más exigentes del mundo.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SECCIÓN FIA FÓRMULA 3 -->
-            <div class="calendar-section">
-                <span class="badge-f3">DONDE EMPIEZA TODO</span>
-                <h2 style="margin-top: 10px;">FIA Formula 3 Championship</h2>
-                <div class="calendar-grid">
-                    
-                    <!-- Tarjeta de Piloto Argentino Destacado en F3 -->
-                    <div class="race-strip" style="border-left-color: #74acdf; background-color: rgba(116, 172, 223, 0.05);">
-                        <div class="race-info">
-                            <span class="race-round" style="color: #74acdf;">🇦🇷🇮🇹</span>
-                            <div class="race-details">
-                                <h3 class="destacado-arg">Mattia Colnaghi</h3>
-                                <p style="color: #fff; font-weight: bold; font-size: 0.8rem; margin-bottom: 4px;">Monza, Italia (Nacionalidad Ítalo-Argentina) | 26/07/2008</p>
-                                <p>La joven promesa de sangre celeste y blanca compite activamente en la numerosa parrilla de la Fórmula 3, buscando abrirse paso hacia los primeros planos mundiales.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="race-strip f3-border">
-                        <div class="race-info">
-                            <span class="race-round" style="color: #e30613;">F3</span>
-                            <div class="race-details">
-                                <h3>La Máxima Competitividad</h3>
-                                <p>Parrillas multitudinarias de 30 autos donde clasificar bien es un auténtico arte. Es el primer gran filtro de los fines de semana de Gran Premio.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- NOTA AL PIE -->
-        <div class="calendar-section" style="color: #fff; line-height: 1.6; margin-top: 5px;">
-            <p style="color: #a1a1a8; font-size: 0.9rem; text-align: center; font-style: italic;">
-                "Para ser piloto de Fórmula 1, primero hay que aprender a domar los escalones que construyen su base."
-            </p>
-        </div>
-
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">🏁 Rapidus Argentinus</span>
+      <span class="logo-sub">El veloz argentino</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Calendario 2026</a>
+      <a href="fangio.html">Juan Manuel Fangio</a>
+      <a href="colapinto.html">Franco Colapinto</a>
+      <a href="#f2f3" class="active">F2 & F3 Hub</a>
     </div>
+  </nav>
+
+  <!-- SECCIÓN F2 & F3 -->
+  <section id="f2f3" class="container">
+    <div class="card main-card" style="border-left-color:#74acdf;">
+      <div class="header">
+        <h1>El Semillero del Automovilismo</h1>
+        <p style="color:#a1a1a8;">Las categorías antesala donde se forjan las futuras leyendas de la Fórmula 1.</p>
+      </div>
+    </div>
+
+    <!-- FIA F2 -->
+    <div class="calendar-section">
+      <span class="badge-f2">CAMINO A LA GLORIA</span>
+      <h2>FIA Formula 2 Championship</h2>
+      <div class="calendar-grid">
+        <div class="race-strip expandable" style="border-left-color:#74acdf;">
+          <div class="race-info">
+            <span class="race-round" style="color:#74acdf;">🇦🇷</span>
+            <div class="race-details">
+              <h3 class="destacado-arg">Nicolás Martín Varrone</h3>
+              <p style="color:#fff; font-weight:bold; font-size:0.8rem;">Ingeniero Maschwitz, Buenos Aires | 06/12/2000</p>
+            </div>
+          </div>
+          <div class="extra-info">
+            Piloto bonaerense que defiende la bandera argentina en la antesala directa de la F1, aportando su experiencia internacional al exigente campeonato de Fórmula 2.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FIA F3 -->
+    <div class="calendar-section">
+      <span class="badge-f3">DONDE EMPIEZA TODO</span>
+      <h2>FIA Formula 3 Championship</h2>
+      <div class="calendar-grid">
+        <div class="race-strip expandable" style="border-left-color:#74acdf;">
+          <div class="race-info">
+            <span class="race-round" style="color:#74acdf;">🇦🇷🇮🇹</span>
+            <div class="race-details">
+              <h3 class="destacado-arg">Mattia Colnaghi</h3>
+              <p style="color:#fff; font-weight:bold; font-size:0.8rem;">Monza, Italia (Ítalo-Argentino) | 26/07/2008</p>
+            </div>
+          </div>
+          <div class="extra-info">
+            Joven promesa de sangre celeste y blanca que compite en la numerosa parrilla de la Fórmula 3, buscando abrirse paso hacia los primeros planos mundiales.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Interactividad: expandir tarjetas al hacer clic
+    const cards = document.querySelectorAll(".expandable");
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        const info = card.querySelector(".extra-info");
+        if (info.style.display === "block") {
+          info.style.display = "none";
+        } else {
+          info.style.display = "block";
+        }
+      });
+    });
+  </script>
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p>© 2026 Rapidus Argentinus | Proyecto web temático de Fórmula 1</p>
+    <p>
+      Hecho con ❤️ en Argentina — 
+      <a href="https://rapidusfluminisargentei.github.io/f1-web/" target="_blank">Sitio oficial</a>
+    </p>
+    <div class="footer-links">
+      <a href="index.html">Inicio</a> |
+      <a href="fangio.html">Fangio</a> |
+      <a href="colapinto.html">Colapinto</a> |
+      <a href="f2-f3.html">F2 & F3</a> |
+      <a href="circuitos.html">Circuitos</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
