@@ -1,128 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapidus Argentinus - F1 Hub</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapidus Argentinus - F1 Hub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="nav-logo">
-            <span class="logo-main">🏁 Rapidus Argentinus</span>
-            <span class="logo-sub">El veloz argentino</span>
-        </a>
-        <div class="nav-links">
-            <a href="index.html" class="active">Calendario 2026</a>
-            <a href="fangio.html">Juan Manuel Fangio</a>
-            <a href="colapinto.html">Franco Colapinto</a>
-            <a href="f2-f3.html">F2 & F3 Hub</a>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="card main-card">
-            <div class="header">
-                <span class="live-badge">PRÓXIMO EVENTO</span>
-                <h1 id="gran-premio">Spanish Grand Prix 🇪🇸</h1>
-            </div>
-            
-            <div class="content">
-                <div class="info-group">
-                    <span class="label">País</span>
-                    <p class="value">España</p>
-                </div>
-                <div class="info-group">
-                    <span class="label">Ronda</span>
-                    <p class="value">R07</p>
-                </div>
-                <div class="info-group">
-                    <span class="label">Fecha</span>
-                    <p class="value">14/06/2026</p>
-                </div>
-                <div class="info-group">
-                    <span class="label">Hora (Argentina)</span>
-                    <p class="value">10:00 hs</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="calendar-section">
-            <h2>Calendario Completo 2026</h2>
-            <div id="calendario-lista" class="calendar-grid">
-
-                <div class="race-strip past-race">
-                    <div class="race-info">
-                        <span class="race-round">R01</span>
-                        <div class="race-details">
-                            <h3>Australian Grand Prix</h3>
-                            <p>Melbourne, Australia — 15:00 hs</p>
-                        </div>
-                    </div>
-                    <div class="race-date-status">
-                        <span class="race-date">08/03/2026</span>
-                        <span class="status-tag">Finalizado</span>
-                    </div>
-                </div>
-
-                <div class="race-strip past-race">
-                    <div class="race-info">
-                        <span class="race-round">R05</span>
-                        <div class="race-details">
-                            <h3>Emilia Romagna Grand Prix</h3>
-                            <p>Imola, Italia — 13:00 hs</p>
-                        </div>
-                    </div>
-                    <div class="race-date-status">
-                        <span class="race-date">17/05/2026</span>
-                        <span class="status-tag">Finalizado</span>
-                    </div>
-                </div>
-
-                <div class="race-strip past-race">
-                    <div class="race-info">
-                        <span class="race-round">R06</span>
-                        <div class="race-details">
-                            <h3>Monaco Grand Prix</h3>
-                            <p>Monte Carlo, Mónaco — 15:00 hs</p>
-                        </div>
-                    </div>
-                    <div class="race-date-status">
-                        <span class="race-date">07/06/2026</span>
-                        <span class="status-tag">Finalizado</span>
-                    </div>
-                </div>
-
-                <div class="race-strip">
-                    <div class="race-info">
-                        <span class="race-round">R07</span>
-                        <div class="race-details">
-                            <h3>Spanish Grand Prix</h3>
-                            <p>Barcelona, España — 15:00 hs</p>
-                        </div>
-                    </div>
-                    <div class="race-date-status">
-                        <span class="race-date">14/06/2026</span>
-                        <span class="status-tag">Próximamente</span>
-                    </div>
-                </div>
-
-                <div class="race-strip">
-                    <div class="race-info">
-                        <span class="race-round">R08</span>
-                        <div class="race-details">
-                            <h3>Canadian Grand Prix</h3>
-                            <p>Montréal, Canadá — 16:00 hs</p>
-                        </div>
-                    </div>
-                    <div class="race-date-status">
-                        <span class="race-date">28/06/2026</span>
-                        <span class="status-tag">Próximamente</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#calendario" class="nav-logo">
+      <span class="logo-main">🏁 Rapidus Argentinus</span>
+      <span class="logo-sub">El veloz argentino</span>
+    </a>
+    <div class="nav-links">
+      <a href="#calendario" class="active">Calendario 2026</a>
+      <a href="#fangio">Juan Manuel Fangio</a>
+      <a href="#colapinto">Franco Colapinto</a>
+      <a href="#f2f3">F2 & F3 Hub</a>
     </div>
+  </nav>
+
+  <!-- SECCIÓN CALENDARIO -->
+  <section id="calendario" class="container">
+    <div class="card main-card">
+      <div class="header">
+        <span class="live-badge">PRÓXIMO EVENTO</span>
+        <h1 id="gran-premio">Spanish Grand Prix 🇪🇸</h1>
+      </div>
+      <div class="content">
+        <div class="info-group">
+          <span class="label">País</span>
+          <p class="value">España</p>
+        </div>
+        <div class="info-group">
+          <span class="label">Ronda</span>
+          <p class="value">R07</p>
+        </div>
+        <div class="info-group">
+          <span class="label">Fecha</span>
+          <p class="value">14/06/2026</p>
+        </div>
+        <div class="info-group">
+          <span class="label">Hora (Argentina)</span>
+          <p class="value">10:00 hs</p>
+        </div>
+      </div>
+      <!-- Contador regresivo -->
+      <div id="countdown" style="margin-top:15px; font-weight:bold; color:#74acdf;"></div>
+    </div>
+
+    <div class="calendar-section">
+      <h2>Calendario Completo 2026</h2>
+      <div id="calendario-lista" class="calendar-grid">
+        <!-- Carreras hardcodeadas (luego se reemplazan con JSON dinámico) -->
+        <div class="race-strip past-race">
+          <div class="race-info">
+            <span class="race-round">R01</span>
+            <div class="race-details">
+              <h3>Australian Grand Prix</h3>
+              <p>Melbourne, Australia — 15:00 hs</p>
+            </div>
+          </div>
+          <div class="race-date-status">
+            <span class="race-date">08/03/2026</span>
+            <span class="status-tag">Finalizado</span>
+          </div>
+        </div>
+
+        <div class="race-strip past-race">
+          <div class="race-info">
+            <span class="race-round">R06</span>
+            <div class="race-details">
+              <h3>Monaco Grand Prix</h3>
+              <p>Monte Carlo, Mónaco — 15:00 hs</p>
+            </div>
+          </div>
+          <div class="race-date-status">
+            <span class="race-date">07/06/2026</span>
+            <span class="status-tag">Finalizado</span>
+          </div>
+        </div>
+
+        <div class="race-strip">
+          <div class="race-info">
+            <span class="race-round">R07</span>
+            <div class="race-details">
+              <h3>Spanish Grand Prix</h3>
+              <p>Barcelona, España — 15:00 hs</p>
+            </div>
+          </div>
+          <div class="race-date-status">
+            <span class="race-date">14/06/2026</span>
+            <span class="status-tag">Próximamente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIONES EXTRA (placeholder, se completan en sus propios HTML) -->
+  <section id="fangio"></section>
+  <section id="colapinto"></section>
+  <section id="f2f3"></section>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Cuenta regresiva
+    const fechaCarrera = new Date("2026-06-14T10:00:00-03:00");
+    const countdown = document.getElementById("countdown");
+
+    setInterval(() => {
+      const ahora = new Date();
+      const diff = fechaCarrera - ahora;
+      if (diff <= 0) {
+        countdown.textContent = "¡La carrera ya comenzó!";
+        return;
+      }
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      countdown.textContent = `Faltan ${dias} días, ${horas}h ${minutos}m`;
+    }, 1000);
+  </script>
 </body>
 </html>
