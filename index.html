@@ -16,8 +16,7 @@
             <a href="index.html" class="active">Calendario 2026</a>
             <a href="fangio.html">Juan Manuel Fangio</a>
             <a href="colapinto.html">Franco Colapinto</a>
-            <a href="f2-f3.html">F2 & F3 Hub</a> <!-- ¡Nueva página! -->
-            <a href="circuitos.html">Circuitos</a> <!-- ¡Nuevo enlace! -->
+            <a href="f2-f3.html">F2 & F3 Hub</a>
         </div>
     </nav>
 
@@ -25,25 +24,25 @@
         <div class="card main-card">
             <div class="header">
                 <span class="live-badge">PRÓXIMO EVENTO</span>
-                <h1 id="gran-premio">Cargando carrera...</h1>
+                <h1 id="gran-premio">Spanish Grand Prix 🇪🇸</h1>
             </div>
             
             <div class="content">
                 <div class="info-group">
                     <span class="label">País</span>
-                    <p id="pais" class="value">-</p>
+                    <p class="value">España</p>
                 </div>
                 <div class="info-group">
                     <span class="label">Ronda</span>
-                    <p id="ronda" class="value">-</p>
+                    <p class="value">R07</p>
                 </div>
                 <div class="info-group">
                     <span class="label">Fecha</span>
-                    <p id="fecha" class="value">-</p>
+                    <p class="value">14/06/2026</p>
                 </div>
                 <div class="info-group">
                     <span class="label">Hora (Argentina)</span>
-                    <p id="hora" class="value">-</p>
+                    <p class="value">10:00 hs</p>
                 </div>
             </div>
         </div>
@@ -51,66 +50,79 @@
         <div class="calendar-section">
             <h2>Calendario Completo 2026</h2>
             <div id="calendario-lista" class="calendar-grid">
+
+                <div class="race-strip past-race">
+                    <div class="race-info">
+                        <span class="race-round">R01</span>
+                        <div class="race-details">
+                            <h3>Australian Grand Prix</h3>
+                            <p>Melbourne, Australia — 15:00 hs</p>
+                        </div>
+                    </div>
+                    <div class="race-date-status">
+                        <span class="race-date">08/03/2026</span>
+                        <span class="status-tag">Finalizado</span>
+                    </div>
                 </div>
+
+                <div class="race-strip past-race">
+                    <div class="race-info">
+                        <span class="race-round">R05</span>
+                        <div class="race-details">
+                            <h3>Emilia Romagna Grand Prix</h3>
+                            <p>Imola, Italia — 13:00 hs</p>
+                        </div>
+                    </div>
+                    <div class="race-date-status">
+                        <span class="race-date">17/05/2026</span>
+                        <span class="status-tag">Finalizado</span>
+                    </div>
+                </div>
+
+                <div class="race-strip past-race">
+                    <div class="race-info">
+                        <span class="race-round">R06</span>
+                        <div class="race-details">
+                            <h3>Monaco Grand Prix</h3>
+                            <p>Monte Carlo, Mónaco — 15:00 hs</p>
+                        </div>
+                    </div>
+                    <div class="race-date-status">
+                        <span class="race-date">07/06/2026</span>
+                        <span class="status-tag">Finalizado</span>
+                    </div>
+                </div>
+
+                <div class="race-strip">
+                    <div class="race-info">
+                        <span class="race-round">R07</span>
+                        <div class="race-details">
+                            <h3>Spanish Grand Prix</h3>
+                            <p>Barcelona, España — 15:00 hs</p>
+                        </div>
+                    </div>
+                    <div class="race-date-status">
+                        <span class="race-date">14/06/2026</span>
+                        <span class="status-tag">Próximamente</span>
+                    </div>
+                </div>
+
+                <div class="race-strip">
+                    <div class="race-info">
+                        <span class="race-round">R08</span>
+                        <div class="race-details">
+                            <h3>Canadian Grand Prix</h3>
+                            <p>Montréal, Canadá — 16:00 hs</p>
+                        </div>
+                    </div>
+                    <div class="race-date-status">
+                        <span class="race-date">28/06/2026</span>
+                        <span class="status-tag">Próximamente</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-
-    <script>
-        const opcionesFecha = { timeZone: 'America/Argentina/Buenos_Aires', day: '2-digit', month: '2-digit', year: 'numeric' };
-        const opcionesHora = { timeZone: 'America/Argentina/Buenos_Aires', hour: '2-digit', minute: '2-digit', hour12: false };
-
-        fetch('datos.json')
-            .then(response => response.json())
-            .then(data => {
-                // 1. PRÓXIMA CARRERA
-                const proxima = data.proxima_carrera;
-                if (proxima && proxima.fecha_iso) {
-                    const fechaProxima = new Date(proxima.fecha_iso);
-                    document.getElementById('gran-premio').innerText = proxima.nombre_gran_premio;
-                    document.getElementById('pais').innerText = proxima.pais;
-                    document.getElementById('ronda').innerText = proxima.ronda;
-                    document.getElementById('fecha').innerText = fechaProxima.toLocaleDateString('es-AR', opcionesFecha);
-                    document.getElementById('hora').innerText = fechaProxima.toLocaleTimeString('es-AR', opcionesHora) + " hs";
-                } else {
-                    document.getElementById('gran-premio').innerText = "Fin de temporada 🏁";
-                }
-
-                // 2. CALENDARIO COMPLETO
-                const listaContenedor = document.getElementById('calendario-lista');
-                listaContenedor.innerHTML = '';
-
-                data.calendario_completo.forEach(carrera => {
-                    if (!carrera.fecha_iso) return;
-
-                    const fechaCarrera = new Date(carrera.fecha_iso);
-                    const fechaFormateada = fechaCarrera.toLocaleDateString('es-AR', opcionesFecha);
-                    const horaFormateada = fechaCarrera.toLocaleTimeString('es-AR', opcionesHora);
-
-                    const carreraCard = document.createElement('div');
-                    carreraCard.className = `race-strip ${carrera.ya_paso ? 'past-race' : ''}`;
-                    
-                    const nroRonda = carrera.ronda < 10 ? `R0${carrera.ronda}` : `R${carrera.ronda}`;
-                    
-                    carreraCard.innerHTML = `
-                        <div class="race-info">
-                            <span class="race-round">${nroRonda}</span>
-                            <div class="race-details">
-                                <h3>${carrera.nombre_gran_premio}</h3>
-                                <p>${carrera.ubicacion}, ${carrera.pais} — ${horaFormateada} hs</p>
-                            </div>
-                        </div>
-                        <div class="race-date-status">
-                            <span class="race-date">${fechaFormateada}</span>
-                            <span class="status-tag">${carrera.ya_paso ? 'Finalizado' : 'Próximamente'}</span>
-                        </div>
-                    `;
-                    listaContenedor.appendChild(carreraCard);
-                });
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                document.getElementById('gran-premio').innerText = "Error al cargar datos";
-            });
-    </script>
 </body>
 </html>
